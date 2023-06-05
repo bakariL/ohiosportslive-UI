@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GamesTopBannerComponent } from './games-top-banner.component';
+import { GameFeedTopComponent } from './game-feed-top.component';
 
-describe('GamesTopBannerComponent', () => {
-  let component: GamesTopBannerComponent;
-  let fixture: ComponentFixture<GamesTopBannerComponent>;
+describe('GameFeedTopComponent', () => {
+  let component: GameFeedTopComponent;
+  let fixture: ComponentFixture<GameFeedTopComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GamesTopBannerComponent ]
+      declarations: [ GameFeedTopComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GamesTopBannerComponent);
+    fixture = TestBed.createComponent(GameFeedTopComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
