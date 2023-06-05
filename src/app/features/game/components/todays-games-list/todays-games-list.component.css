@@ -1,0 +1,11 @@
+.page-title {
+  font-weight: 800;
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: large;
+  color: #7b7b7b;
+}
+
+mat-card {
+  background-color: rgb(247, 247, 247);
+}

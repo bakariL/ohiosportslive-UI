@@ -1,0 +1,62 @@
+
+.mat-card{
+        background-color: #f0f4f4;
+        color: rgba(50, 50, 93, 0.25);
+}
+
+mat-card-title{
+        color: rgba(50, 50, 93, 0.25);
+        font-weight: bold;
+
+}
+
+.card-title-event{
+        color: rgba(50, 50, 93, 0.25);
+        font-weight: bold;
+}
+
+
+.new-event{
+        margin-top: 80px;
+        background-color: #808B96;   
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;     
+}
+
+.new-event-form{
+        background-color: #f0f4f4
+}
+
+.mat-card-actions{
+        background-color: #f0f4f4;
+}
+
+
+mat-hint{
+        color: rgba(50, 50, 93, 0.25);      
+}
+
+
+
+::ng-deep .mat-icon-button{
+        background-color:#92A9BD !important;       
+}
+
+
+::ng-deep .mat-form-field {
+        .mat-input-element {
+            color: slategray;
+        }
+        .mat-form-field-label {
+            color: slategray;
+        }
+        .mat-form-field-underline {
+            background-color: slategray;
+        }
+        .mat-form-field-ripple {
+            background-color: slategray;
+        }
+        .mat-form-field-required-marker {
+            color: slategray;
+        }
+    }
+

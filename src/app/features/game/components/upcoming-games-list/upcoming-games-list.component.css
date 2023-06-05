@@ -1,0 +1,48 @@
+.page-title {
+  font-weight: 800;
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: large;
+  color: #7b7b7b;
+}
+
+mat-card {
+  background-color: rgb(247, 247, 247);
+  color: #7b7b7b;
+  font-weight: 400;
+  border-style: solid;
+  border-color: #f5f5f5;
+  border-radius: 3%;
+  box-shadow: 1px 1px 1px 1px #7b7b7b;
+}
+
+.watch-button {
+  font-weight: 700;
+}
+
+.watch-button-box {
+  background-color: #ffdaa5;
+}
+
+
+
+
+.card-data {
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+mat-card {
+  padding: 17px;
+  margin-bottom: 12px;
+  background-color: rgb(247, 247, 247);
+  color: #7b7b7b;
+  font-weight: 400;
+  border-style: solid;
+  border-color: #f5f5f5;
+  border-radius: 3%;
+  box-shadow: 1px 1px 1px 1px #7b7b7b;
+  max-width: 250px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Accept a payment</title>
+    <meta name="description" content="A demo of a payment on Stripe" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="credit-card-information.component.css" />
+  </head>
+  <body>
+    <div class="contatiner">
+      <div id="panel">
+        <form [formGroup]="form" (submit)="payNow()" id="payment-form">
+          <div class="row">
+            <div class="col-md-6 mb-2">
+              <div class="md-form md-outline my-2">
+                <input
+                  formControlName="cardownername"
+                  type="text"
+                  id="cc-name"
+                  class="form-control"
+                  required
+                />
+                <label for="cardownername">Name on card</label>
+              </div>
+              <div class="invalid-feedback">Name on card is required</div>
+            </div>
+            <div class="col-md-6 mb-2">
+              <div class="md-form md-outline my-2">
+                <input
+                  formControlName="cardnumber"
+                  type="text"
+                  id="cc-number"
+                  class="form-control"
+                  required
+                />
+                <label for="cardnumber">Credit card number</label>
+              </div>
+              <div class="invalid-feedback">Credit card number is required</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 mb-2">
+              <div class="md-form md-outline my-2">
+                <input
+                  formControlName="expirationdate"
+                  type="month"
+                  id="cc-expiration"
+                  class="form-control"
+                  required
+                />
+                <label for="expirationdate">Expiration date</label>
+              </div>
+              <div class="invalid-feedback">Expiration date required</div>
+            </div>
+            <div class="col-md-3 mb-2">
+              <div class="md-form md-outline my-2">
+                <input
+                  formControlName="securitycode"
+                  type="text"
+                  id="cc-cvv"
+                  class="form-control"
+                  required
+                />
+
+                <label for="securitycode">CVV</label>
+              </div>
+
+              <div class="md-form md-outline my-2">
+                <input type="hidden" formControlName="id" />
+                <input type="hidden" formControlName="amount" />
+              </div>
+
+              <div class="invalid-feedback">Security code required</div>
+            </div>
+            <div class="col-md-3 mb-2">
+              <span>
+                Ticket Price: <b> ${{ data.amount }} </b></span
+              >
+            </div>
+          </div>
+          <hr class="mb-4" />
+          <button class="btn btn-primary btn-lg btn-block" type="submit">
+            Continue to checkout
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./checkout.js" defer></script>
+    <script src="./card.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+
+/* .footer-flux{
+
+    
+
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+padding: 51px 252px;
+
+position: absolute;
+width: 1440px;
+height: 238px;
+left: 20px;
+top: 20px;
+
+
+background: #242424;
+
+flex-shrink: 0;
+
+} */
+
+footer {
+    display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+padding: 51px 252px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 1440px;
+    max-width: 1440px;
+    min-width: 720px;
+    height: 100px;
+    background: #242424;
+    padding: 20px;
+    text-align: center;
+  }
+  

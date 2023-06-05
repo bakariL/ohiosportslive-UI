@@ -1,0 +1,21 @@
+export class Team {
+  id: number = 0;
+  teamName: string = '';
+  schoolName: string = '';
+  city: string = '';
+  state: string = '';
+  headCoachName: string = '';
+  wins: number = 0;
+  losses: number = 0;
+  conferenceName: string = '';
+  conferernceRanking: number = 0;
+  stateRanking: number = 0;
+  areaRanking: number = 0;
+  upcomingGame: string = '';
+  igName: string = '';
+  twitterName: string = '';
+  logoPAth: string = '';
+  inGame: boolean = false;
+  seasonPass: boolean = false;
+  payPerGame: boolean = false;
+}

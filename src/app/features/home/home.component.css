@@ -1,0 +1,28 @@
+/* .game-row-todays-games {
+  padding-top: 2em;
+  margin-top: 5em;
+  background-color: #fbfbfb;
+  box-shadow: 3px 3px 3px 3px #bdbdbd;
+}
+
+.game-row-upcoming-games {
+  padding-top: 2em;
+  margin-top: 5em;
+  background-color: #fbfbfb;
+  box-shadow: 3px 3px 3px 3px #bdbdbd;
+}
+
+.game-row-previous-games {
+  padding-top: 2em;
+  margin-top: 5em;
+  background-color: #fbfbfb;
+  box-shadow: 3px 3px 3px 3px #bdbdbd;
+} */
+
+.home{
+  position: relative;
+  width: 1440px;
+  max-width: 1440px;
+  min-width: 720px;
+  background: #FFFFFF;
+}

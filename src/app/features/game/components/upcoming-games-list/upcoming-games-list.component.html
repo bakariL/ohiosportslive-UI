@@ -1,0 +1,32 @@
+<ng-container *ngFor="let game of gameList$ | async">
+<div class="row">
+  <h2>Upcoming Games</h2>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <div class="col-3 card-data">
+     <mat-card >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title
+          >{{ game.homeTeam  }} vs {{ game.awayTeam  }}
+        </mat-card-title>
+        <p></p>
+      </mat-card-header>
+      <img
+        id="pic"
+        mat-card-image
+        src="{{ game.imgPath }}"
+        alt="Team Names here"
+      />
+      <mat-card-content>
+        <p>Game Description goes here.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button [routerLink]="['view/watch', game.gameId]">
+          Watch
+        </button>
+        <button mat-button [routerLink]="[game.gameId]">Details</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+</ng-container>

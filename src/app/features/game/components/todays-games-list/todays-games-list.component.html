@@ -1,0 +1,98 @@
+<div class="row">
+  <h2 class="page-title">Today's Matchup</h2>
+  <!-- <div class="col-md-2 mx-auto my-5" *ngFor="let game of gameList">
+      
+      <mat-card class="game-card">
+        <mat-card-header>
+          <div mat-card-avatar class="game-header-image"></div>
+          <mat-card-title  >{{ game.home_team_1}}  vs  {{ game.away_team_2}} </mat-card-title>
+          <p></p>
+        </mat-card-header>
+        <img id="pic" mat-card-image src= '{{ game.imG_PATH }}'  alt="Team Names here">
+        <mat-card-content>
+          <p>
+            Game Description goes here. 
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+        <button mat-button [routerLink]="['view/watch', game.gameId]"> Watch </button>  
+        <button mat-button  [routerLink]="[game.gameId]"  > Details </button>
+        </mat-card-actions>
+      </mat-card> -->
+
+  <!-- Carousel wrapper -->
+  <div
+    id="carouselBasicExample"
+    class="carousel slide carousel-fade"
+    data-mdb-ride="carousel"
+    *ngFor="let game of gameList"
+  >
+    <!-- Indicators -->
+
+    <!-- Inner -->
+    <div class="carousel-inner">
+      <!-- Single item -->
+      <div class="carousel-item active">
+        <a [routerLink]="['view/watch', game.gameId]">
+          <img
+            src="\assets\images\Maple Garfield helmet matchup.png"
+            class="d-block w-100"
+            alt="Sunset Over the City"
+        /></a>
+        <button mat-button [routerLink]="[game.gameId]">Details</button>
+        <div class="carousel-caption d-none d-md-block"></div>
+      </div>
+
+      <!-- Single item -->
+      <div class="carousel-item">
+        <a href="#"
+          ><img
+            src="\assets\images\stow_vs_northRoyalton_example.jpg"
+            class="d-block w-100"
+            alt="Canyon at Nigh"
+        /></a>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+
+      <!-- Single item -->
+      <div class="carousel-item">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp"
+          class="d-block w-100"
+          alt="Cliff Above a Stormy Sea"
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Inner -->
+
+    <!-- Controls -->
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-mdb-target="#carouselBasicExample"
+      data-mdb-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-mdb-target="#carouselBasicExample"
+      data-mdb-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- Carousel wrapper -->
+</div>
