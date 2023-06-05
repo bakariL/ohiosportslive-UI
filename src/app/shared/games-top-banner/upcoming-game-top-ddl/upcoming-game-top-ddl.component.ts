@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-upcoming-game-top-ddl',
+  selector: 'osl-upcoming-game-top-ddl',
   templateUrl: './upcoming-game-top-ddl.component.html',
   styleUrls: ['./upcoming-game-top-ddl.component.css']
 })

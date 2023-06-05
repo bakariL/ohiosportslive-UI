@@ -1,6 +1,8 @@
 .top-banner{
-    height: 147px;
-    width: 1440px;
+    height: 140px;
+    width: 1480px;
+    max-width:  1480px;
+    min-width: 720px;
     left: 0px;
     top: 72px;
     border-radius: 0px; 
@@ -10,15 +12,9 @@
 
 }
 
-.upcoming-games-top-banner{
-    height: 51px;
-    width: 168px;
-    left: 0px;
-    top: 0px;
-    border-radius: [object Object]px;
-    padding: 16px;
-    background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
-        linear-gradient(0deg, #ECECEC, #ECECEC);
-        border: 1px solid #ADB8B8
+.upcoming-game-ddl{
+    margin-left: 40px;
+    padding-top: 20px;
 }
+
 
