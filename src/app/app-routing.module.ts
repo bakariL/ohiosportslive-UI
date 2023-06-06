@@ -4,7 +4,9 @@ import { HomeComponent } from './features/home/home.component';
 import { AuthGuard } from './shared/auth/services/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: '', component: HomeComponent
+  // , canActivate: [AuthGuard] 
+},
   {
     path: 'auth',
     loadChildren: () =>
@@ -24,13 +26,13 @@ const routes: Routes = [
     path: 'watch',
     loadChildren: () =>
       import('./features/watch/watch.module').then((m) => m.WatchModule),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'score',
     loadChildren: () =>
       import('./features/scoreboard/scoreboard.module').then((m) => m.ScoreboardModule),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
 ];
 

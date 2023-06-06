@@ -36,7 +36,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ScoreboardComponent } from './features/scoreboard/components/scoreboard.component';
 import { NgxSubscribeDirective } from './shared/utils/ng-subscribe.directive';
 import { FooterFluxComponent } from './shared/footer-flux/footer-flux.component';
-import { GamesTopBannerComponent } from './shared/games-top-banner/games-top-banner.component';
+import { GameFeedTopBannerContainerComponent } from './shared/games-top-banner/game-feed-top-banner-container/game-feed-top-banner-container.component';
+import { GameFeedTopComponent } from './shared/games-top-banner/game-feed-top/game-feed-top.component';
+import { UpcomingGameTopDdlComponent } from './shared/games-top-banner/upcoming-game-top-ddl/upcoming-game-top-ddl.component';
 
 
 
@@ -46,7 +48,9 @@ export function tokenGetter() {
 }
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent
+  // , canActivate: [AuthGuard] 
+},
 ];
 
 @NgModule({
@@ -61,7 +65,9 @@ const routes: Routes = [
     TodaysGamesListComponent,
     NgxSubscribeDirective,
     FooterFluxComponent,
-    GamesTopBannerComponent
+    GameFeedTopBannerContainerComponent,
+    GameFeedTopComponent,
+    UpcomingGameTopDdlComponent
     
   ],
   imports: [
