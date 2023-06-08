@@ -1,17 +1,30 @@
 
-.upcoming-games-label{
-  font-size: x-small;
-  flex-direction: row;
+
+
+.rounded-rectangle {
+  height: auto;
+    width: 210px;
+    left: 0px;
+    top: 3px;
+  border-radius: 10px;
+  padding: 6px 5px;
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+  linear-gradient(0deg, #ECECEC, #ECECEC);
+  border: 1px solid #ADB8B8;
+  box-sizing: border-box;
+
+
+
 }
 
 
-.upcoming-games-top{
-
+ .upcoming-games-top
+{
     height: 51px;
     width: 168px;
     left: 0px;
     top: 0px;
-    border-radius: [object Object]px;
+    border-radius: 10px;
     padding: 16px;
     background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
         linear-gradient(0deg, #ECECEC, #ECECEC);
@@ -19,30 +32,28 @@
 
         box-sizing: border-box;
 
-/* Auto layout */
-
 display: flex;
 flex-direction: row;
-align-items: flex-start;
+/* align-items: flex-start; */
 padding: 16px;
 gap: 10px;
 
 width: 168px;
 height: 51px;
 
-/* Ohio Dark */
-
 background: #242424;
-/* Ohio Gray */
 
 border: 1px solid #ADB8B8;
 border-radius: 12px 12px 0px 0px;
 
-/* Inside auto layout */
 
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 
+mat-option{
+  color: #FFFFFF;
+}
 
+ 
