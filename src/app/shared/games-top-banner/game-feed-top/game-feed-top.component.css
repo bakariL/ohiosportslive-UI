@@ -1,0 +1,34 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, .2fr));
+    grid-gap: 5px; /* Adjust spacing as needed */
+  }
+  
+    
+.game-feed-card{
+    height: 40px;
+    width: 150px;
+    left: 0px;
+    top: 3px;
+    border-radius: 10px;
+    padding-top: 10px; 
+    background-color: white;
+    color: #242424;
+    border: 1px solid #ADB8B8
+
+}
+
+.header-text{
+    text-align: center;
+    font-size: small;
+}
+
+.feed-title{
+    text-align: center;
+    font-size: large;
+    padding-top: 10px;
+}
+
+
+  
+

@@ -1,16 +1,16 @@
 <div class="container">
 <div class="rounded-rectangle">
   <mat-form-field>
-        <mat-label>Upcoming Games</mat-label> 
+        <span class="upg-label">Upcoming Games</span> 
         <mat-select 
             class="upcoming-games-top" 
             [(value)]="selectedValue" 
             (selectionChange)="onSelectionChange($event)"
             >
-          <mat-option value="option1">Boys Basketball</mat-option>
-          <mat-option value="option1">Girls Basketball</mat-option>
-          <mat-option value="option2">Football</mat-option>
-          <mat-option value="option3">Volleyball</mat-option>
+          <mat-option 
+              *ngFor="let option of options" 
+              [value]="option.value">{{ option.label }}
+            </mat-option>
         </mat-select>
       </mat-form-field>
       </div>

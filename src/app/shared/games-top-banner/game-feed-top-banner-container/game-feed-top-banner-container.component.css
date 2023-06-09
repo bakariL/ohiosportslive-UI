@@ -1,8 +1,10 @@
-.top-banner{
+/* .top-banner{
+    display: flex;
+    flex-direction: row;
     height: 140px;
-    width: 1480px;
-    max-width:  1480px;
-    min-width: 720px;
+    /* width: 1480px; */
+    /* max-width:  1480px;
+    min-width: 720px; 
     left: 0px;
     top: 72px;
     border-radius: 0px; 
@@ -10,11 +12,19 @@
     background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
         linear-gradient(0deg, #ECECEC, #ECECEC);
 
-}
+} */
+/* 
 
 .upcoming-game-ddl{
     margin-left: 40px;
     padding-top: 20px;
 }
+
+.upcoming-game-feed{
+    display: flex;
+    flex-direction: row;
+    margin-left: 40px;
+    padding-top: 20px;
+} */
 
 
