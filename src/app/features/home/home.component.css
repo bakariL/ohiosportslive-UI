@@ -51,3 +51,17 @@
   padding-top: 15px;
   padding-left: 20px;
 }
+
+.live-scores{
+  position: absolute;
+  width: 1170px;
+  height: 453px;
+  left: 135px;
+  top: 193px;
+  
+  /* Gray 01 */
+  
+  background: #F1F1F1;
+  border-radius: 12px;
+ 
+}
