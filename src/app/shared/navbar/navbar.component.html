@@ -1,119 +1,23 @@
-<!-- <div class="row flux-nav-bar">
-
-    <nav class="navbar navbar-expand-lg flux">
-      <div class="navbar-nav">
-       
-
-        <button
-          class="nav-item nav-link active"
-          [routerLink]="['']"
-          aria-current="page"
-        >
-          Home
-        </button>
-        <button
-          class="nav-item nav-link active"
-          [routerLink]="['team/new-team']"
-          aria-current="page"
-        >
-          Team
-        </button>
-        <button
-          class="nav-item nav-link active"
-          [routerLink]="['games/view']"
-          aria-current="page"
-        >
-          Game
-        </button>
-        <button
-          class="nav-item nav-link active"
-          aria-current="page"
-          [routerLink]="['auth/signup']"
-        >
-          Register
-        </button>
-      </div>
-    </nav>
-    <button
-      class="order-online nav-item nav-link active"
-      [routerLink]="['auth/login']"
-      aria-current="page"
-    >
-      Login
-    </button>
-</div> -->
-
-
-<!-- 
-number 2 -->
-<!-- <div class="row">
-<div class="nav-container osl-nav-bar">
-  <span class="logo">OhioSportsLive</span>
-  <div class="search-container">
-  <mat-form-field class="search-field">
-    <input  matInput type="text" placeholder="Search game, player, team">
-    <button mat-button matSuffix>
-      <mat-icon matSuffix>search</mat-icon>
-    </button>
-  </mat-form-field> 
-</div>
-
-<mat-tab-group>
-  <mat-tab tabindex="0" label="Basketball" >
-  </mat-tab>
-  <mat-tab tabindex="1" label="Football">
-  </mat-tab>
-  <mat-tab tabindex="2" label="Volleyball">
-  </mat-tab>
-
-</mat-tab-group>
-<div class="account-tab">
-  My Account
-  <mat-icon class="profile-icon">account_circle</mat-icon>
-</div>
-</div>
-</div> -->
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">OhioSportsLive</a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <div class="search-container">
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search game, player, team" aria-label="Search">
-          <button class="btn btn-primary" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
-      </div>
-
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Basketball</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Football</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Volleyball</a>
-        </li>
-      </ul>
-
-      <div class="account-tab">
-        My Account
-        <i class="fas fa-user-circle"></i>
-      </div>
+<div class="custom-navbar">
+  <div class="navbar-content">
+    <span class="logo">OhioSportsLive</span>
+    <div class="search-container">
+      <input type="text" placeholder="Search game, player, team">
+      <!-- <button type="button">
+        <i class="fas fa-search"></i>
+      </button> -->
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Basketball</a></li>
+      <li><a href="#">Football</a></li>
+      <li><a href="#">Volleyball</a></li>
+    </ul>
+    <div class="account-tab">
+      My Account
+      <i class="fas fa-user-circle"></i>
     </div>
   </div>
-</nav>
-
-
+</div>
 
 
 
