@@ -1,19 +1,25 @@
-<div class="container upg-ddl">
-<div class="rounded-rectangle">
-  <mat-form-field>
-        <span class="upg-label">Upcoming Games</span> 
-        <mat-select 
-            class="upcoming-games-top" 
-            [(value)]="selectedValue" 
-            (selectionChange)="onSelectionChange($event)"
-            >
-          <mat-option 
-              *ngFor="let option of options" 
-              [value]="option.value">{{ option.label }}
-            </mat-option>
-        </mat-select>
-      </mat-form-field>
-      </div>
-    </div>
+<mat-card class="custom-card">
+  <!-- Title section -->
+  <div class="card-title">
+    <span class="upg-label">Upcoming Games</span>
+  </div>
 
-  
+  <!-- Dropdown section -->
+  <div class="card-content">
+    <mat-form-field>
+      <mat-select 
+          class="upcoming-games-select" 
+          [(value)]="selectedValue" 
+          (selectionChange)="onSelectionChange($event)"
+          class="black-text"
+        >
+        <mat-select-trigger>
+          <i class="fas fa-chevron-down"></i>
+        </mat-select-trigger>
+        <mat-option class="black-text"
+          *ngFor="let option of options" 
+        [value]="option.value">{{ option.label }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</mat-card>

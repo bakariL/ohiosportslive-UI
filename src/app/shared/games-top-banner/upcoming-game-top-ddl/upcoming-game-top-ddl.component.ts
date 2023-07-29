@@ -8,14 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class UpcomingGameTopDdlComponent implements OnInit {
   selectedValue: string = "";
   options = [
-    { value: 'boys-basketball', label: 'Boys Basketball' },
-    { value: 'girls-basketball', label: 'Girls Basketball' },
-    { value: 'football', label: 'Football' },
-    { value: 'volleyball', label: 'Volleyball' },
+    {  label: 'Boys Basketball',value: 'boys-basketball' },
+    {  label: 'Girls Basketball' ,value: 'girls-basketball'},
+    // { value: 'football', label: 'Football' },
+    // { value: 'volleyball', label: 'Volleyball' },
 
   ];
 
-  constructor() { }
+  constructor() { 
+      this.selectedValue = 'Deez'
+
+  }
 
   ngOnInit(): void {
   }

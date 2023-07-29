@@ -29,6 +29,7 @@
     border-radius: 12px;
     display: flex;
     align-items: center; 
+    margin-top: 40px;
   }
 
   .live-scores-section img {
@@ -51,6 +52,7 @@
     height: 249px;
   }
   
+
 
 
   

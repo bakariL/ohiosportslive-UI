@@ -1,8 +1,4 @@
 
-
-
-
-/* everywhere else */
 * {
   font-family: Helvetica, sans-serif;
 }
@@ -17,6 +13,38 @@ html, body {
 
 
 
+
 /* .mat-form-field-appearance-fill .mat-form-field-flex{
   background-color: #C4183B ;
 } */
+
+.mat-option-text
+{
+  background-color: white;
+  margin: 0;
+}
+.mat-select{
+    color: black;
+}
+
+.mat-select-panel 
+{
+  background-color: white;
+}
+
+.mat-select-value {
+  color: black;
+}
+
+.mat-select-empty{
+  color: black;
+}
+
+
+::ng-deep .mat-select-value-text {
+  color: black;
+}
+
+.mat-option{
+  color: black;
+}
