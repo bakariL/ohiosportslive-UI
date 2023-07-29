@@ -6,8 +6,8 @@
   
     
 .game-feed-card{
-    height: 40px;
-    width: 150px;
+    height: 60px;
+    width: 200px;
     left: 0px;
     top: 3px;
     border-radius: 10px;
@@ -24,10 +24,44 @@
 }
 
 .feed-title{
+    
     text-align: center;
-    font-size: large;
-    padding-top: 10px;
+    font-size: medium;
+    
+    
 }
+
+.pic-left{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 10px; 
+  border-radius: 5px;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+}
+
+
+.pic-right{
+   width: 20px;
+   height: 20px;
+   border-radius: 5px;
+   margin-left: 12px;
+   flex: none;
+   order: 0;
+   flex-grow: 0;
+ }
+
+
+ .game-feed{
+  padding-top: 15px;
+  padding-left: 20px;
+}
+
 
 
   

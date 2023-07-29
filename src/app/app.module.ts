@@ -39,7 +39,7 @@ import { FooterFluxComponent } from './shared/footer-flux/footer-flux.component'
 import { GameFeedTopBannerContainerComponent } from './shared/games-top-banner/game-feed-top-banner-container/game-feed-top-banner-container.component';
 import { GameFeedTopComponent } from './shared/games-top-banner/game-feed-top/game-feed-top.component';
 import { UpcomingGameTopDdlComponent } from './shared/games-top-banner/upcoming-game-top-ddl/upcoming-game-top-ddl.component';
-
+import { LiveScoresComponent } from './features/live-scores/live-scores.component';
 
 
 
@@ -67,7 +67,8 @@ const routes: Routes = [
     FooterFluxComponent,
     GameFeedTopBannerContainerComponent,
     GameFeedTopComponent,
-    UpcomingGameTopDdlComponent
+    UpcomingGameTopDdlComponent,
+    LiveScoresComponent
     
   ],
   imports: [

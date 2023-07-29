@@ -1,149 +1,76 @@
- 
-.osl-nav-bar {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 16px 24px;
-  gap: 10px;
-  /* position: fixed; */
-  background-color:#C4183B;;
-  z-index: 2;
 
-  width: 1480px;
-  max-width:  1480px;
-  min-width: 720px;
-  height: 72px;
 
-  left: 0px;
-  top: 0px;
-  border-bottom: 3px solid #242424;
-  bottom: 0px;
+
+/* Custom styles for the navbar */
+.navbar {
+  min-height: 80px; /* Adjust the height as needed */
 }
 
-.mat-tab-labels{
-  margin-right: 500px;
-}
-mat-tab-group{
-  margin-left: 200px;
-  margin-top: 23px;
+/* Custom styles for the brand/logo */
+.navbar-brand {
+  font-size: 24px; /* Adjust the font size as needed */
+  font-weight: bold;
 }
 
-.nav-container {
-  /* display: flex; */
-  /* justify-content: space-evenly */
-  padding-top: 0px;
-}
-
-
-.search-bar{
-  box-sizing: border-box;
-  margin-top: 5px;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-padding: 8px 24px;
-gap: 169px;
-
-background: #C4183B;
-
-border: 1.5px solid #FFFFFF;
-border-radius: 1000px;
-
-flex: none;
-order: 1;
-flex-grow: 0;
-}
-
-/* mat-icon {
-  font-size: 24px;
-  color: #999999;
-  margin-right: 8px;
-} */
-
-mat-form-field {
-  flex: 1;
-  margin-right: 8px;
-  width: 300px;
-
-}
-
+/* Custom styles for the search container */
 .search-container {
+  flex: 1; /* Occupy available space within the navbar */
+}
+
+/* Custom styles for the search input */
+.form-control {
+  width: 100%; /* Full width of the search input */
+}
+
+/* Custom styles for the account tab */
+.account-tab {
   display: flex;
   align-items: center;
-  margin-top: 10px;
-
+  margin-left: 20px; /* Adjust the margin as needed */
 }
 
-mat-icon {
-  color: #999999;
-  margin-left: 8px;
-  cursor: pointer;
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  .search-container,
+  .nav.nav-tabs {
+    display: none; /* Hide the search container and navigation tabs */
+  }
+
+  .account-tab {
+    margin-left: auto; /* Move the account tab to the right */
+  }
+
+  .navbar-toggler {
+    display: block; /* Show the mobile menu toggler button */
+  }
+
+  .collapse.navbar-collapse {
+    display: none; /* Initially hide the navbar content */
+  }
+
+  .navbar-toggler[aria-expanded="true"] ~ .collapse.navbar-collapse {
+    display: block; /* Show the navbar content when toggler is clicked */
+  }
 }
 
-.profile-icon {
-  font-size: 24px;
-  color: #999999;
+/* Additional CSS styles if needed */
+
+/* For the search input */
+.search-container .form-control {
+  max-width: 300px; /* Adjust the max-width as needed */
 }
 
-
-
-.search-field {
+/* For the "My Account" tab */
+.account-tab {
   display: flex;
   align-items: center;
-  
 }
 
-
- .logo {
-  width: 195px;
-  height: 32px;
-  left: 0px;
-  /* top: 4px; */
-  border-radius: 0px;
-  /* font-family: 'Jost'; */
-  font-style: italic;
-  font-weight: 800;
-  font-size: 22px;
-  line-height: 32px;
-  color: #FFFFFF;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin-top: 30px;
-} 
-
-.account-tab{
-  box-sizing: border-box;
-  margin-top: 30px;
-
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 8px 24px;
-gap: 10px;
-
-width: 164px;
-height: 35px;
-
-background: #FFFFFF;
-
-border: 1.5px solid #FFFFFF;
-border-radius: 1000px;
-
-flex: none;
-order: 1;
-flex-grow: 0;
+.account-tab i {
+  margin-left: 5px; /* Adjust the margin as needed */
 }
 
 
 
-.mat-tab-header .mat-tab-label-active {
-  border-bottom-color: black !important;
-}
-
-.mat-tab-label .mat-tab-label-active{
-  border-bottom-color: black !important;
-}
 
 

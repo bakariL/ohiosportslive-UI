@@ -1,20 +1,30 @@
 <ng-container>  
       <mat-spinner *ngIf="isLoading"></mat-spinner>
-      <div class="container">
+      <div class="container game-feed">
          <mat-card class="game-feed-card" *ngFor="let game of gameList$ | async">
             <mat-card-header class="header-text"> 
                 Mon @ 7:30pm
             </mat-card-header>
             <mat-card-title 
                 class="feed-title"
-              >{{ game.homeTeam  }} vs {{ game.awayTeam  }}
-            </mat-card-title>
-          <!-- <img
-            id="pic"
+              >
+            <!-- <img
+            class="pic-left"
             mat-card-image
             src="{{ game.imgPath }}"
             alt="Team Names here"
-          /> -->
+          />  -->
+          {{ game.homeTeam  }} 
+           vs
+          {{ game.awayTeam  }} 
+          <!-- <img
+          class="pic-right"
+          mat-card-image
+          src="{{ game.imgPath }}"
+          alt="Team Names here"
+        />  -->
+            </mat-card-title>
+           
         </mat-card>
     </div>
 </ng-container>

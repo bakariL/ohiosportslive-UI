@@ -2,24 +2,55 @@
 .title-ls
 {
     width: 128px;
-height: 29px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 29px;
-/* identical to box height */
-
-
-/* Ohio Red */
-
-color: #C4183B;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
+    height: 29px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    /* Ohio Red */
+    color: #C4183B;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+   
+    
 }
+
+
+.live-scores-section{
+    position: absolute;
+    width: 1170px;
+    height: 453px;
+    left: 135px;
+    top: 193px;
+    background: #F1F1F1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center; 
+  }
+
+  .live-scores-section img {
+    padding: 10px;
+    margin-bottom: 300px;
+  }
+  
+  .live-scores-section span {
+    margin-left: 12px; 
+    margin-bottom: 350px;
+  }
+
+  .live-game-cards{
+    margin-top: 250px;
+    margin-left: 200px;
+  }
+
+  .card{
+    width: 250%;
+    height: 249px;
+  }
+  
+
+
+  
