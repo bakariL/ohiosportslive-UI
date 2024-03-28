@@ -10,13 +10,11 @@ export class UpcomingGameTopDdlComponent implements OnInit {
   options = [
     {  label: 'Boys Basketball',value: 'boys-basketball' },
     {  label: 'Girls Basketball' ,value: 'girls-basketball'},
-    // { value: 'football', label: 'Football' },
-    // { value: 'volleyball', label: 'Volleyball' },
 
   ];
 
   constructor() { 
-      this.selectedValue = 'Deez'
+    this.selectedValue = 'boys-basketball'; 
 
   }
 
@@ -25,6 +23,7 @@ export class UpcomingGameTopDdlComponent implements OnInit {
 
 
   onSelectionChange(event: any) {
+    console.log('>>> , ', this.selectedValue)
     this.selectedValue = event.value;
   }
 

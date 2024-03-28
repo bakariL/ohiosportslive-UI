@@ -1,58 +1,55 @@
-
-.title-ls
-{
-    width: 128px;
-    height: 29px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    /* Ohio Red */
-    color: #C4183B;
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-   
-    
+.live-scores-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #F1F1F1;
+  border-radius: 12px;
+  padding: 20px;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
 }
 
+.top-row {
+  display: flex;
+  align-items: center;
+}
 
-.live-scores-section{
-    position: absolute;
-    width: 1170px;
-    height: 453px;
-    left: 135px;
-    top: 193px;
-    background: #F1F1F1;
-    border-radius: 12px;
-    display: flex;
-    align-items: center; 
-    margin-top: 40px;
+.bottom-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px; /* Add some space between the top and bottom rows */
+}
+
+.example-card {
+  width: calc(20% - 1px);
+  height: 200px;
+  margin: 0 10px 20px 0; /* Adjust margin to create space between cards */
+  flex-shrink: 0;
+}
+
+.title-livescore {
+  margin-left: 10px;
+    color: #C4183B;
+
+}
+
+.viallAllBtn {
+  position: absolute;
+  /* Place the button 10px from the right edge of the container */
+  right: 120px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .example-card {
+    width: calc(50% - 20px); /* Adjust width for two cards in a row */
   }
+}
 
-  .live-scores-section img {
-    padding: 10px;
-    margin-bottom: 300px;
+@media screen and (max-width: 576px) {
+  .example-card {
+    width: calc(100% - 20px); /* Adjust width for single card in a row */
   }
-  
-  .live-scores-section span {
-    margin-left: 12px; 
-    margin-bottom: 350px;
-  }
-
-  .live-game-cards{
-    margin-top: 250px;
-    margin-left: 200px;
-  }
-
-  .card{
-    width: 250%;
-    height: 249px;
-  }
-  
-
-
-
-  
+}
