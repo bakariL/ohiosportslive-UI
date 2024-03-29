@@ -41,7 +41,8 @@ import { UpcomingGameTopDdlComponent } from './shared/games-top-banner/upcoming-
 import { LiveScoresComponent } from './features/live-scores/live-scores.component';
 import { LivestreamingGameCardComponent } from './features/live-streaming/components/livestreaming-game-card/livestreaming-game-card.component';
 import { LivestreamingPreviousGameCardComponent } from './features/live-streaming/components/livestreaming-previous-game-card/livestreaming-previous-game-card.component';
-import { HomeComponent } from './features/home/container/hhome.component';
+import { HomeComponent } from './features/home/container/home.component';
+import { OslHomeModule } from './features/home/home.module';
 
 
 
@@ -99,6 +100,7 @@ const routes: Routes = [
     MatStepperModule,
     MatToolbarModule,
     MatTabsModule ,
+    OslHomeModule,
     ReactiveFormsModule,
     UcWidgetModule,
     JwtModule.forRoot({
