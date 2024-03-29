@@ -1,18 +1,17 @@
-  <div class="card-title">
-    <span class="upg-label">Upcoming Games</span>
-  </div>
+<mat-card class="custom-card">
+    <mat-card-title class="card-title">Upcoming Games</mat-card-title>
 
   <div class="card-content">
-      <mat-select 
+    <mat-form-field>
+      <mat-select  
           class="upcoming-games-select" 
           [(value)]="selectedValue" 
           (selectionChange)="onSelectionChange($event)"
         >
-        <mat-select-trigger>
-          <i class="fas fa-chevron-down"></i>
-        </mat-select-trigger>
-        <mat-option class="black-text"
-          *ngFor="let option of options" 
+        <mat-option  *ngFor="let option of options"
+         class="black-text"   
         [value]="option.value">{{ option.label }}</mat-option>
       </mat-select>
+    </mat-form-field>
   </div>
+</mat-card>

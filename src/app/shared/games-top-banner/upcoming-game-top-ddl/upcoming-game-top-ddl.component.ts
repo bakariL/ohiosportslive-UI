@@ -8,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class UpcomingGameTopDdlComponent implements OnInit {
   selectedValue: string = "";
   options = [
-    {  label: 'Boys Basketball',value: 'boys-basketball' },
-    {  label: 'Girls Basketball' ,value: 'girls-basketball'},
-
+    { label: 'Select a sport', value: 'select-a-sport' },
+    { label: 'Boys Basketball', value: 'boys-basketball' },
+    { label: 'Girls Basketball', value: 'girls-basketball' },
   ];
+  
 
   constructor() { 
-    this.selectedValue = 'boys-basketball'; 
+    this.selectedValue = 'select-a-sport'; 
 
   }
 
@@ -23,8 +24,8 @@ export class UpcomingGameTopDdlComponent implements OnInit {
 
 
   onSelectionChange(event: any) {
-    console.log('>>> , ', this.selectedValue)
     this.selectedValue = event.value;
+    this.options = this.options.filter(option => option.value !== 'select-a-sport');
   }
 
 }
