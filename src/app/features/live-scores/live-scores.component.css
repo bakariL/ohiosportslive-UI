@@ -1,6 +1,9 @@
+/* Base styles */
 .live-scores-section {
   position: relative;
-  width: 100%;
+  width: 90%;
+  max-width: 1200px;
+  margin: 170px auto 0; /* Adjust the top margin to move it down */
   height: auto;
   background: #F1F1F1;
   border-radius: 12px;
@@ -8,6 +11,22 @@
   overflow-x: auto;
   display: flex;
   flex-direction: column;
+}
+
+/* Adjust the padding for smaller screens */
+@media screen and (max-width: 768px) {
+  .live-scores-section {
+    padding: 20px 10px;
+  }
+}
+
+/* Adjust styles for larger screens */
+@media screen and (min-width: 1200px) {
+  .live-scores-section {
+    width: 95%; /* Adjust width for larger screens */
+    max-width: none; /* Remove max-width for larger screens */
+    margin-top: 170px; /* Adjust the top margin for larger screens */
+  }
 }
 
 .top-row {
@@ -22,34 +41,154 @@
   margin-top: 20px; /* Add some space between the top and bottom rows */
 }
 
-.example-card {
-  width: calc(20% - 1px);
-  height: 200px;
-  margin: 0 10px 20px 0; /* Adjust margin to create space between cards */
-  flex-shrink: 0;
-}
-
 .title-livescore {
   margin-left: 10px;
-    color: #C4183B;
-
+  color: #C4183B;
+  font-size: 24px; /* Adjust font size to make it bigger */
+  font-weight: bold; /* Make the font bold */
 }
 
+
 .viallAllBtn {
+  background-color: transparent; /* Transparent background */
+  color: #000; /* Black text color */
+  border: 2px solid #000; /* Black border */
+  border-radius: 8px; /* Add some rounded corners */
+  padding: 12px 24px; /* Add padding to increase button size */
+  font-size: 18px; /* Increase font size */
+  font-weight: bold; /* Make the font bold */
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s; /* Add transition for smoother hover effect */
   position: absolute;
-  /* Place the button 10px from the right edge of the container */
   right: 120px;
 }
 
-/* Media queries for responsiveness */
-@media screen and (max-width: 768px) {
+.viallAllBtn:hover {
+  color: #fff; /* Change text color on hover */
+  background-color: #000; /* Change background color on hover */
+}
+
+
+.viallAllBtn:hover {
+  background-color: #333; /* Darken the background color on hover */
+}
+
+
+
+.example-card {
+  position: relative; /* Ensure relative positioning for absolute positioning */
+  width: calc(25% - 20px); /* Initially set to 25% of container width */
+  height: 200px;
+  margin: 0 10px 20px 0;
+  flex-shrink: 0;
+  border-radius: 12px; /* Add rounded corners */
+  background: #fdfdfd;
+}
+
+.example-card .view-game-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background-color: #fdfdfd; /* Button background color */
+  color: #1a1a1a; /* Button text color (very dark gray) */
+  border: none;
+  border-radius: 0 0 12px 12px; /* Rounded corners for the bottom */
+  cursor: pointer;
+  font-size: 16px; /* Adjust font size */
+  font-weight: bold; /* Make the font bold */
+  border-top: 1px solid #ddd; /* Add border-top for divider with a lighter shade of gray */
+}
+
+.example-card .view-game-btn:hover {
+  background-color: #9F102A; /* Change background color on hover */
+}
+
+
+
+
+/* Media query to adjust card width for larger screens */
+@media screen and (min-width: 1200px) {
   .example-card {
-    width: calc(50% - 20px); /* Adjust width for two cards in a row */
+    width: calc(20% - 20px); /* Adjusted to 25% for larger screens */
+  }
+}
+/* Media query to adjust card width for tablets */
+@media screen and (max-width: 992px) {
+  .example-card {
+    width: calc(33.333% - 20px); /* Corrected width calculation */
   }
 }
 
+
+/* Media query to adjust card width for mobile devices */
 @media screen and (max-width: 576px) {
   .example-card {
-    width: calc(100% - 20px); /* Adjust width for single card in a row */
+    width: calc(100% - 20px); /* Adjusted to 100% for mobile devices */
   }
 }
+
+.example-card .mat-card-content h2 {
+  color: #1a1a1a; /* Dark gray text color */
+}
+ h3 {
+  color: #1a1a1a; /* Dark gray text color */
+ }
+
+ #teamNames{
+  color: #1a1a1a; /* Dark gray text color */
+ }
+.example-card .data-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; /* Adjust spacing between rows */
+}
+
+.example-card .column {
+  flex: 0 0 calc(50% - 10px); /* Two columns, each with 50% width minus spacing */
+}
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; /* Adjust spacing between rows */
+}
+
+.column {
+  display: flex;
+  justify-content: center; /* Center contents horizontally */
+  align-items: center; /* Center contents vertically */
+  flex: 1; /* Occupy available space */
+}
+
+/* Media query to adjust column layout for smaller screens */
+@media screen and (max-width: 768px) {
+  .example-card .column {
+    flex: 0 0 100%; /* Full width for each column on smaller screens */
+  }
+}
+
+.example-card .second-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Adjust spacing between the rows */
+}
+
+.example-card .second-row .column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.centered-image {
+  max-width: 100%; /* Ensure the image does not exceed the width of its container */
+  height: auto; /* Maintain the aspect ratio of the image */
+}
+
+.example-card .second-row .column:nth-child(1),
+.example-card .second-row .column:nth-child(3) {
+  flex: 2; /* Set the first and third columns to take up twice the space of the second column */
+}
+
+
