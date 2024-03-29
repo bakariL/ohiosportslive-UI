@@ -1,38 +1,28 @@
-/* Custom styles for the card */
 .custom-card {
   width: 100%;
   max-width: 200px;
-  height: 75px;
   border-radius: 8px;
   background-color: white;
   margin-left: 20px;
   margin-top: 7px;
   color: black;
- 
+  display: flex; /* Use flexbox to arrange elements in rows */
+  flex-direction: column; /* Arrange elements vertically */
 }
 
-/* Custom styles for the title section */
 .card-title {
-  padding: 0px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  padding: 10px;
   text-align: center;
   font-size: 15px;
   font-weight: bold;
-  color: black;
 }
 
-/* Custom styles for the dropdown section */
 .card-content {
-  padding: 0px;
-  width: 100%;
-  max-width: 150px;
-  color: black;
+  padding: 10px;
 }
 
-/* Custom styles for the mat-select */
 .upcoming-games-select {
-  background-color: white;
+  background-color: #f9f9f9;
   border-radius: 8px;
   border: 1px solid #ccc;
   padding: 8px 16px;
@@ -42,19 +32,9 @@
   max-width: 150px;
 }
 
-/* Custom styles for the mat-option */
 .mat-option {
   font-size: 16px;
   color: black;
+  background-color: white;
 }
-
-
-
-
-
-
-
-
-
-
 
