@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { GameModule } from './features/game/game.module';
 import { GameListFullPageComponent } from './features/game/container/game-list-full-page.component';
-import { HomeComponent } from './features/home/home.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
@@ -40,6 +39,9 @@ import { GameFeedTopBannerContainerComponent } from './shared/games-top-banner/g
 import { GameFeedTopComponent } from './shared/games-top-banner/game-feed-top/game-feed-top.component';
 import { UpcomingGameTopDdlComponent } from './shared/games-top-banner/upcoming-game-top-ddl/upcoming-game-top-ddl.component';
 import { LiveScoresComponent } from './features/live-scores/live-scores.component';
+import { LivestreamingGameCardComponent } from './features/live-streaming/components/livestreaming-game-card/livestreaming-game-card.component';
+import { LivestreamingPreviousGameCardComponent } from './features/live-streaming/components/livestreaming-previous-game-card/livestreaming-previous-game-card.component';
+import { HomeComponent } from './features/home/container/hhome.component';
 
 
 
@@ -68,7 +70,9 @@ const routes: Routes = [
     GameFeedTopBannerContainerComponent,
     GameFeedTopComponent,
     UpcomingGameTopDdlComponent,
-    LiveScoresComponent
+    LiveScoresComponent,
+    LivestreamingGameCardComponent,
+    LivestreamingPreviousGameCardComponent
     
   ],
   imports: [

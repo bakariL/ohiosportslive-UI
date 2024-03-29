@@ -14,46 +14,8 @@ html, body {
   background-color: white;
 }
 
-.mat-select
-{
-  outline: none !important;
-}
-
 
 .mat-select-value {
   color: black !important;
-}
-
-
-/* Override the focus outline mat-select */
-.mat-select-panel.mat-primary.mat-select-panel-primary .mat-optgroup.mat-option:focus, 
-.mat-select-panel.mat-primary.mat-select-panel-primary .mat-option.mat-active:focus {
-    outline: none !important;
-}
-
-
-
-/* Override the focus outline for mat-select */
-::ng-deep .mat-option.mat-active:focus {
-  outline: none !important;
-}
-
-/* Override the focus outline for mat-select */
-::ng-deep .mat-select.mat-select.ng-touched.ng-dirty.ng-invalid:focus .mat-select-trigger {
-  outline: none !important;
-}
-
-/* Override the focus outline for mat-select */
-.mat-select-panel.mat-primary .mat-option.mat-selected:focus, 
-.mat-select-panel.mat-primary .mat-option.mat-selected:hover {
-    background-color: #BDBDBD; /* Change background color when option is focused or hovered */
-    color: #000000; /* Change text color when option is focused or hovered */
-}
-
-
-/* Override the focus outline for mat-select */
-.mat-option:focus:not(.mat-option-disabled) {
-  background-color: transparent !important; /* Change background color when option is focused */
-  outline: none !important; /* Remove the outline */
 }
 

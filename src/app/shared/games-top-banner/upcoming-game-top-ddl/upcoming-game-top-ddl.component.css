@@ -22,7 +22,7 @@
   position: absolute;
   top: 75%; /* Position it at the vertical center of the card */
   left: 55%; /* Position it at the horizontal center of the card */
-  transform: translate(-50%, -50%); /* Move it back by half its own width and height */
+  transform: translate(-50%, -50%); 
   width: 100%;
   padding: 10px;
 }
@@ -43,67 +43,3 @@
   font-size: 16px;
   color: black;
 }
-
-
-.mat-select
-{
-  outline: none !important;
-}
-
-
-.mat-select-value {
-  color: black !important;
-}
-
-
-/* Override the focus outline mat-select */
-.mat-select-panel.mat-primary.mat-select-panel-primary .mat-optgroup.mat-option:focus, 
-.mat-select-panel.mat-primary.mat-select-panel-primary .mat-option.mat-active:focus {
-    outline: none !important;
-}
-
-
-
-/* Override the focus outline for mat-select */
-::ng-deep .mat-option.mat-active:focus {
-  outline: none !important;
-}
-
-/* Override the focus outline for mat-select */
-::ng-deep .mat-select.mat-select.ng-touched.ng-dirty.ng-invalid:focus .mat-select-trigger {
-  outline: none !important;
-}
-
-/* Override the focus outline for mat-select */
-.mat-select-panel.mat-primary .mat-option.mat-selected:focus, 
-.mat-select-panel.mat-primary .mat-option.mat-selected:hover {
-    background-color: #BDBDBD; /* Change background color when option is focused or hovered */
-    color: #000000; /* Change text color when option is focused or hovered */
-}
-
-
-/* Override the focus outline for mat-select */
-.mat-option:focus:not(.mat-option-disabled) {
-  background-color: transparent !important; /* Change background color when option is focused */
-  outline: none !important; /* Remove the outline */
-}
-
-/* Disable browser's default focus styling */
-.mat-option:focus {
-  outline: none;
-}
-
-/* Apply custom focus styling */
-.mat-option:focus:not(.mat-option-disabled) {
-  background-color: rgba(0, 0, 0, 0.1); /* Custom background color */
-  /* Add any other custom styling for the focus state */
-}
-
-
-.mat-select .upcoming-games-select 
-.ng-tns-c96-1 
-ng-tns-c51-0 
-ng-star-inserted{
-  background-color: yellow !important;
-}
-
