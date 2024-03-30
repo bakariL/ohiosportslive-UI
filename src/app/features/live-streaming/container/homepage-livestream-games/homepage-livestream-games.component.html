@@ -1,0 +1,12 @@
+<section class="live-stream-section">
+  <div class="top-row">
+    <span class="title-livescore">LiveStreaming</span>
+    <button class="viallAllBtn">BOYS BASKETBALL</button>
+    <button class="viallAllBtn">GIRLS BASKETBALL</button>
+    <button class="viallAllBtn">FOOTBALL</button>
+    <button class="viallAllBtn">VOLLEYBALL</button>
+  </div>
+  <div class="bottom-row">
+    <osl-livestreaming-game-card *ngFor="let game of livestreamingGames" [game]="game"></osl-livestreaming-game-card>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+/* Base styles */
+.live-stream-section {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 170px auto 0; /* Adjust the top margin to move it down */
+    height: auto;
+    background: #181818;
+    border-radius: 12px;
+    padding: 20px;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Adjust the padding for smaller screens */
+  @media screen and (max-width: 768px) {
+    .live-stream-section {
+      padding: 20px 10px;
+    }
+  }
+  
+  /* Adjust styles for larger screens */
+  @media screen and (min-width: 1200px) {
+    .live-stream-section {
+      width: 95%; /* Adjust width for larger screens */
+      max-width: none; /* Remove max-width for larger screens */
+      margin-top: 170px; /* Adjust the top margin for larger screens */
+    }
+  }
