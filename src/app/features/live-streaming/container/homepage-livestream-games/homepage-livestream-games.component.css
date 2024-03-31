@@ -5,7 +5,7 @@
     max-width: 1200px;
     margin: 170px auto 0; /* Adjust the top margin to move it down */
     height: auto;
-    background: #181818;
+    background-color: #181818;
     border-radius: 12px;
     padding: 20px;
     overflow-x: auto;
