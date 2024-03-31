@@ -39,10 +39,10 @@ import { GameFeedTopBannerContainerComponent } from './shared/games-top-banner/g
 import { GameFeedTopComponent } from './shared/games-top-banner/game-feed-top/game-feed-top.component';
 import { UpcomingGameTopDdlComponent } from './shared/games-top-banner/upcoming-game-top-ddl/upcoming-game-top-ddl.component';
 import { LiveScoresComponent } from './features/live-scores/live-scores.component';
-import { LivestreamingGameCardComponent } from './features/live-streaming/components/livestreaming-game-card/livestreaming-game-card.component';
 import { LivestreamingPreviousGameCardComponent } from './features/live-streaming/components/livestreaming-previous-game-card/livestreaming-previous-game-card.component';
 import { HomeComponent } from './features/home/container/home.component';
 import { OslHomeModule } from './features/home/home.module';
+import { LiveStreamingModule } from './features/live-streaming/live-streaming.module';
 
 
 
@@ -72,8 +72,10 @@ const routes: Routes = [
     GameFeedTopComponent,
     UpcomingGameTopDdlComponent,
     LiveScoresComponent,
-    LivestreamingGameCardComponent,
-    LivestreamingPreviousGameCardComponent
+    LivestreamingPreviousGameCardComponent,
+    
+    
+    
     
   ],
   imports: [
@@ -84,6 +86,7 @@ const routes: Routes = [
     AuthModule,
     WatchModule,
     PaymentModule,
+    LiveStreamingModule,
     GameModule,
     MatButtonModule,
     MatCardModule,

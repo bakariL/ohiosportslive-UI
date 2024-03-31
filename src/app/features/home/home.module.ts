@@ -16,6 +16,7 @@ import { OslHomeService } from './services/osl-home.service';
         HttpClientModule,
 
     ],
+    exports:[],
     providers:[OslHomeService],
     bootstrap:[],
 })
