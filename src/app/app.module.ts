@@ -71,12 +71,7 @@ const routes: Routes = [
     GameFeedTopBannerContainerComponent,
     GameFeedTopComponent,
     UpcomingGameTopDdlComponent,
-    LiveScoresComponent,
-    LivestreamingPreviousGameCardComponent,
-    
-    
-    
-    
+    LiveScoresComponent,  
   ],
   imports: [
     BrowserModule,

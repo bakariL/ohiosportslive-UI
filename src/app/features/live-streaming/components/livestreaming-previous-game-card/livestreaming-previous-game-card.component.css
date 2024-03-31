@@ -1,0 +1,69 @@
+.example-card {
+    position: relative; /* Ensure relative positioning for absolute positioning */
+    width: calc(20% - 20px); /* Initially set to 25% of container width */
+    height: 200px;
+    margin: 0 10px 20px 0;
+    flex-shrink: 0;
+    border-radius: 12px; /* Add rounded corners */
+    background: #fdfdfd;
+    display: flex; /* Add display flex for column alignment */
+    flex-direction: column; /* Align children in column */
+    justify-content: space-between; /* Space out children */
+}
+
+
+.example-card .watch-game-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-color: #9F102A; /* Red background color for "Watch Now" button */
+    color: #1a1a1a; /* Button text color (very dark gray) */
+    border: none;
+    border-radius: 0 0 12px 12px; /* Rounded corners for the bottom */
+    cursor: pointer;
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Make the font bold */
+    border-top: 1px solid #ddd; /* Add border-top for divider with a lighter shade of gray */
+  }
+
+
+  .example-card .watch-game-btn:hover {
+    background-color: #fdfdfd; /* Button background color */
+}
+
+.mat-card-content {
+    padding: 0; /* Remove padding to eliminate white space */
+}
+
+.data-row {
+    display: flex;
+    justify-content: center; /* Center the columns horizontally */
+    margin: 0 5px; /* Add 5px margin on the sides */
+}
+
+.column, .full-width-column {
+    flex: 1; /* Equal width for all columns */
+    margin: 0 5px; /* Add 5px margin on the sides */
+}
+
+.profile-image-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make it a circle */
+    overflow: hidden; /* Hide overflowing parts */
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+
+/* Styling for the "Q3" text */
+.example-card .second-row h3 {
+    color: #1a1a1a; /* Black text color */
+    font-weight: bold; /* Make the font bold */
+}

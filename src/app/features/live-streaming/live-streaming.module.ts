@@ -5,13 +5,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeLivestreamingGamesComponent } from './container/homepage-livestream-games/homepage-livestream-games.component';
 import { LivestreamingGameCardComponent } from './components/livestreaming-game-card/livestreaming-game-card.component';
 import { MatCardModule } from '@angular/material/card';
+import { LivestreamingPreviousGameCardComponent } from './components/livestreaming-previous-game-card/livestreaming-previous-game-card.component';
 
 // const routes: Routes = [
 //     { path: '' ,component:  HomeComponent},
 // ];
 
 @NgModule({
-    declarations:[HomeLivestreamingGamesComponent,LivestreamingGameCardComponent],
+    declarations:[
+        HomeLivestreamingGamesComponent,
+        LivestreamingGameCardComponent,
+        LivestreamingPreviousGameCardComponent,
+    ],
     imports: [
         CommonModule,
         MatCardModule,
@@ -20,8 +25,9 @@ import { MatCardModule } from '@angular/material/card';
     ],
     exports:[
         HomeLivestreamingGamesComponent,
-        LivestreamingGameCardComponent
-        
+        LivestreamingGameCardComponent,
+        LivestreamingPreviousGameCardComponent
+    
     ],
     providers:[],
     bootstrap:[],
