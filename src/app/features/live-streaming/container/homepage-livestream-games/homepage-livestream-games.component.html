@@ -1,5 +1,5 @@
 <section class="live-stream-section">
-  <h2 class="page-title">Live Games</h2> <!-- Add the title here -->
+  <h2 class="page-title">Live Games</h2>
   <div class="top-row">
     <span class="title-livescore">LiveStreaming</span>
     <button class="viallAllBtn">BOYS BASKETBALL</button>
@@ -10,4 +10,8 @@
   <div class="bottom-row">
     <osl-livestreaming-game-card *ngFor="let game of livestreamingGames" [game]="game"></osl-livestreaming-game-card>
   </div>
+  <h2 class="last-row-title">Previous Games</h2> <!-- Move the title here -->
+    <div class="last-row">
+      <osl-livestreaming-previous-game-card></osl-livestreaming-previous-game-card>
+    </div>
 </section>

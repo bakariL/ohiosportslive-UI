@@ -75,3 +75,29 @@
     font-weight: bold; /* Adjust font weight as needed */
   }
   
+
+  .live-stream-section .bottom-row {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
+
+  /* last row */
+.live-stream-section .last-row {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.page-title {
+  color: white; /* Title text color */
+  font-size: 24px; /* Title font size */
+  margin-bottom: 5px; /* Adjust as needed */
+}
+
+.last-row-title{
+  color: white; /* Title text color */
+  font-size: 24px; /* Title font size */
+  margin-bottom: 5px; /* Adjust as needed */
+}
