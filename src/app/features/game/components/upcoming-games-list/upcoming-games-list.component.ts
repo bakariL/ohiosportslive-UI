@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UntilDestroy } from '@ngneat/until-destroy';
-import { of } from 'rxjs';;
+import { Observable, of } from 'rxjs';;
 import { GameService } from '../../services/game.service';
 import { CreateNewGameState } from '../create/state/create-new-game-state.model';
 import { CreateNewGameStateService } from '../create/state/create-new-game-state.service';
@@ -11,7 +11,10 @@ import {  UpcomingGameOdataStateStore } from './state/upcoming-game-odata-state.
 import { GameListService } from './state/game-list.service';
 import { GameListState } from './state/game-list.store';
 import { UpcomingGameOdataState } from './state/upcoming-game-odata-state.store';
-import { UpcomingGamesResponse } from '../../models/game-models';
+import { Game, UpcomingGamesResponse } from '../../models/game-models';
+import { Store, select } from '@ngrx/store';
+import { loadGames } from '../../store/game.actions';
+import { selectGames } from '../../store/game.selectors';
 
 
 @UntilDestroy()
@@ -24,6 +27,7 @@ export class UpcomingGamesListComponent implements OnInit, OnDestroy {
   odataStoreState = of<UpcomingGameOdataState>();
   gameList$ =  of<UpcomingGamesResponse[]>();
   isLoading = of<boolean>();
+  games$: Observable<Game[]> = of([]); // Example initialization
 
 
   activeGame = of<string>();
@@ -36,12 +40,15 @@ export class UpcomingGamesListComponent implements OnInit, OnDestroy {
     private _upcomingGameQuery: UpcomingGamesQuery,
     private _upcomingGameOdataStateQuery: UpcomingGameOdataStateStore,
     private _upcomingGameStore: UpcomingGamesStore,
-    private _createNewGameService: CreateNewGameStateService
+    private _createNewGameService: CreateNewGameStateService,
+    private store: Store
  ) {}
   ngOnInit() {
 
 
-    this.gameList$ = this._upcomingGameQuery.getUpcomingGames();
+    // this.gameList$ = this._upcomingGameQuery.getUpcomingGames();
+    this.store.dispatch(loadGames());
+    this.games$ = this.store.pipe(select(selectGames));
     // console.log(this.gameList$, '  <<<<')
 
     // this.gameList = this._upcomingGameQuery.getUpcomingGames();

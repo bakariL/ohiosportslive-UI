@@ -43,6 +43,44 @@ export const createUpcomingGamesRepsonse = (
 });
 
 
+export class Game {
+  gameId: string = '';
+  homeTeam: string = '';
+  awayTeam: string = '';
+  location: string = '';
+  imgPath: string = '';
+  description: string = '';
+  // Date_Of_game: Date = ''
+}
+
+
+export interface GameResponse {
+  gameId: string;
+  homeTeam: string;
+  awayTeam: string;
+  location: string;
+  imgPath: string ;
+  description: string;
+  games: Game[];
+}
+
+export const createGameRepsonse = (
+  params: Partial<GameResponse>,
+): GameResponse => ({
+    gameId: '',
+    homeTeam: '',
+    awayTeam: '',
+    location: '',
+    imgPath: '',
+    description: '',
+    games: [],
+    ...params,
+});
+
+
+
+
+
 export class NewGame {
   homeTeam: string = '';
   awayTeam: string = '';

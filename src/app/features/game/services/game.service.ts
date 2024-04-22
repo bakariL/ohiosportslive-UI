@@ -6,6 +6,7 @@ import { catchError, map, retry } from 'rxjs/operators';
 import { FluxConnections } from 'src/app/shared/constants/flux-connections';
 import {
   AllGames,
+  Game,
   NewGame,
   PreviousGames,
   TodaysGames,
@@ -40,6 +41,15 @@ export class GameService {
   getListofAllGames(): Observable<AllGames[]> {
     return this._http
       .get<AllGames[]>(FluxConnections.FLUX_API_URI + 'api/Game/viewAll')
+      .pipe(
+        retry(1)
+        // catchError("wewe")
+      );
+  }
+
+  getGames(): Observable<Game[]> {
+    return this._http
+      .get<Game[]>(FluxConnections.FLUX_API_URI + 'api/Game/getGames')
       .pipe(
         retry(1)
         // catchError("wewe")

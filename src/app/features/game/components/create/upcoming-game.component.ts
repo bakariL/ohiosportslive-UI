@@ -11,6 +11,7 @@ import { CreateNewGameState } from './state/create-new-game-state.model';
 import { CreateNewGameStateQuery } from './state/create-new-game-state.query';
 import { CreateNewGameStateService } from './state/create-new-game-state.service';
 import { CreateNewGameStateStore } from './state/create-new-game-state.store';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-upcoming-game',
@@ -31,7 +32,8 @@ export class UpcomingGameComponent implements OnInit {
     private _router: Router,
     private _fileService: FileUploadService,
     private _createGameQuery: CreateNewGameStateQuery,
-     private _createGameStore: CreateNewGameStateStore
+     private _createGameStore: CreateNewGameStateStore,
+     private oslStore: Store
   ) {}
   createUpcomingGameForm = new FormGroup({
     id: new FormControl(''),

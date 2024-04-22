@@ -43,6 +43,10 @@ import { LivestreamingPreviousGameCardComponent } from './features/live-streamin
 import { HomeComponent } from './features/home/container/home.component';
 import { OslHomeModule } from './features/home/home.module';
 import { LiveStreamingModule } from './features/live-streaming/live-streaming.module';
+import { StoreModule } from '@ngrx/store';
+import { GameEffects } from './features/game/store/game.effects';
+import { EffectsModule } from '@ngrx/effects';
+import { reducers } from './shared/store';
 
 
 
@@ -108,6 +112,9 @@ const routes: Routes = [
         disallowedRoutes: [],
       },
     }),
+    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([GameEffects]),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [AuthGuard],

@@ -15,6 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FileUploadComponent } from 'src/app/shared/file-upload/file-upload.component';
 import { UcWidgetModule } from 'ngx-uploadcare-widget';
+import { gameReducer } from './store/game.reducer';
+import { StoreModule } from '@ngrx/store';
 
 
 const routes: Routes = [
@@ -29,6 +31,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    StoreModule.forFeature('game', gameReducer),
     ReactiveFormsModule,
     HttpClientModule,
     MatFormFieldModule,
