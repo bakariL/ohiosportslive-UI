@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, UntypedFormBuilder, UntypedFormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { untilDestroyed } from '@ngneat/until-destroy';
-import { of, pipe } from 'rxjs';
+import { Observable, of, pipe } from 'rxjs';
 import { FileUploadService } from 'src/app/shared/file-upload/file-upload.service';
-import { NewGame } from '../../models/game-models';
+import { Game, NewGame } from '../../models/game-models';
 import { GameService } from '../../services/game.service';
 import { GameListState } from '../upcoming-games-list/state/game-list.store';
 import { CreateNewGameState } from './state/create-new-game-state.model';
@@ -12,6 +12,7 @@ import { CreateNewGameStateQuery } from './state/create-new-game-state.query';
 import { CreateNewGameStateService } from './state/create-new-game-state.service';
 import { CreateNewGameStateStore } from './state/create-new-game-state.store';
 import { Store } from '@ngrx/store';
+import { addGame } from '../../store/game.actions';
 
 @Component({
   selector: 'app-upcoming-game',
@@ -21,6 +22,7 @@ import { Store } from '@ngrx/store';
 export class UpcomingGameComponent implements OnInit {
 
   upcomingGameData!: NewGame
+  newGame$: Observable<NewGame> = of();
   // newGame = new CreateNewGameState 
   // {id = '',homeTeam = '',awayTeam='', location=''};
 
@@ -58,9 +60,10 @@ export class UpcomingGameComponent implements OnInit {
   //   this._router.navigate(['/games/view']);
   // }
 
-  createNewGame(){
+  createNewGame(newGame: NewGame){
     // this.newGame = this.createUpcomingGameForm.value
     // this._createGameService.add(this.newGame);
+    // this.oslStore.dispatch(addGame())
   }
 
 }
