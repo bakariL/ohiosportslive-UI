@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IPayment } from '../../models/payment-models';
 import { PaymentService } from '../../services/payment.service';

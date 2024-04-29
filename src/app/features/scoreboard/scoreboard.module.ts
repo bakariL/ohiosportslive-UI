@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ScoreboardComponent } from './components/scoreboard.component';
-import {MatTabsModule} from '@angular/material/tabs';
+import {MatLegacyTabsModule as MatTabsModule} from '@angular/material/legacy-tabs';
 
 
 

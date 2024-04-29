@@ -9,7 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { WatchComponent } from './components/watch-event/watch.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreditCardInformationComponent } from '../payment/components/credit-card-info/credit-card-information.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
 import { WatchService } from './services/watch.service';
 import { AuthGuard } from 'src/app/shared/auth/services/auth.guard';
 import { AuthModule } from 'src/app/shared/auth/auth.module';
