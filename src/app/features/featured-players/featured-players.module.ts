@@ -1,4 +1,5 @@
-import { NgModule } from "@angular/core";
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { HomepageFeaturedPlayersComponent } from './container/homepage-featured-players/homepage-featured-players.component';
 
 
@@ -6,8 +7,8 @@ import { HomepageFeaturedPlayersComponent } from './container/homepage-featured-
     declarations: [
     HomepageFeaturedPlayersComponent
   ],
-    imports: [],
-    exports: [],
+    imports: [CommonModule],
+    exports: [HomepageFeaturedPlayersComponent],
     providers: [],
     bootstrap: []
 })

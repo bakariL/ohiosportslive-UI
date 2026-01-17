@@ -7,11 +7,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./view-game.component.css'],
 })
 export class ViewGameComponent implements OnInit {
-  id!: number;
+  gameId = '';
+  title = 'Henryetta High School vs Mounds High School';
+  meta = 'Basketball · Boys · Marion, OH';
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    console.log('okkk' + this.route.snapshot.paramMap.get('gameId'));
+    this.gameId = this.route.snapshot.paramMap.get('gameId') ?? '';
   }
 }

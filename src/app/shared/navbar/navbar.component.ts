@@ -1,26 +1,21 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'osl-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
+  searchQuery = '';
 
-  isNavbarOpen = false;
-  constructor() {}
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {}
-
-  @ViewChild('sidenav') sidenav!: MatSidenav;
-
-  toggleSidenav() {
-    this.sidenav.toggle();
-}
-
-toggleNavbar() {
-  this.isNavbarOpen = !this.isNavbarOpen;
-}
-
+  submitSearch(): void {
+    const query = this.searchQuery.trim();
+    if (!query) {
+      return;
+    }
+    this.router.navigate(['/search'], { queryParams: { q: query } });
+  }
 }

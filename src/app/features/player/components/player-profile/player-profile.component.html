@@ -1,0 +1,154 @@
+<section class="player-profile">
+  <div class="player-hero">
+    <div class="player-avatar">
+      <img [src]="playerPhotoUrl" alt="Player" />
+      <label class="upload-btn">
+        Update photo
+        <input type="file" accept="image/*" (change)="onPhotoSelected($event)" />
+      </label>
+    </div>
+    <div class="player-info">
+      <h1>{{ playerName }} <span>· #13</span></h1>
+      <div class="player-meta">Age: 31 | Ht: 6-4 | Wt: 229</div>
+      <div class="player-stats">
+        <div>
+          <strong>GP</strong>
+          <span>67</span>
+        </div>
+        <div>
+          <strong>PPG</strong>
+          <span>14.9</span>
+        </div>
+        <div>
+          <strong>RPG</strong>
+          <span>4.2</span>
+        </div>
+        <div>
+          <strong>APG</strong>
+          <span>4.2</span>
+        </div>
+      </div>
+      <div class="player-league">🏀 Basketball · Boys · Marion, OH</div>
+      <div class="player-actions">
+        <button class="btn ghost" type="button" (click)="toggleFollow()">
+          {{ isFollowing ? 'Following' : 'Follow' }}
+        </button>
+        <button class="btn primary" [routerLink]="['/team', 'henryetta-high-school']">View team page</button>
+        <button class="share-btn" type="button" (click)="openShare()">
+          <i class="fas fa-share"></i>
+          Share
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="player-tabs">
+    <div class="tab active">Profile</div>
+    <div class="tab">Player Stats</div>
+    <div class="social-icons">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-youtube"></i>
+    </div>
+  </div>
+
+  <div class="player-content">
+    <h2>Bio</h2>
+    <p>
+      It is a long established fact that a reader will be distracted by the readable
+      content of a page when looking at its layout. The point of using Lorem Ipsum is
+      that it has a more-or-less normal distribution of letters.
+    </p>
+
+    <h2>Last 5 games</h2>
+    <div class="game-table">
+      <div class="game-row header">
+        <span>Game date</span>
+        <span>Matchup</span>
+        <span>W/L</span>
+        <span>MIN</span>
+        <span>PTS</span>
+        <span>FGM</span>
+        <span>FGA</span>
+      </div>
+      <div class="game-row">
+        <span>APR 15, 2023</span>
+        <span>BOS vs ATL</span>
+        <span>W</span>
+        <span>21</span>
+        <span>5</span>
+        <span>1</span>
+        <span>6</span>
+      </div>
+      <div class="game-row">
+        <span>APR 05, 2023</span>
+        <span>BOS vs TOR</span>
+        <span>W</span>
+        <span>35</span>
+        <span>10</span>
+        <span>4</span>
+        <span>19</span>
+      </div>
+      <div class="game-row">
+        <span>APR 04, 2023</span>
+        <span>BOS &#64; PHI</span>
+        <span>L</span>
+        <span>28</span>
+        <span>17</span>
+        <span>7</span>
+        <span>16</span>
+      </div>
+      <div class="game-row">
+        <span>MAR 31, 2023</span>
+        <span>BOS vs UTA</span>
+        <span>W</span>
+        <span>32</span>
+        <span>9</span>
+        <span>4</span>
+        <span>12</span>
+      </div>
+      <div class="game-row">
+        <span>MAR 30, 2023</span>
+        <span>BOS vs MIL</span>
+        <span>L</span>
+        <span>27</span>
+        <span>6</span>
+        <span>3</span>
+        <span>10</span>
+      </div>
+    </div>
+
+    <h2 class="accent">Recommended Content</h2>
+    <div class="recommended-grid">
+      <div class="rec-card">
+        <img src="assets/images/stow_vs_northRoyalton_example.jpg" alt="Game" />
+        <div>
+          <span>OCTOBER 30, 2022</span>
+          <strong>Varsity Softball Wilson - Henryetta High School Vs. Mounds High School</strong>
+        </div>
+      </div>
+      <div class="rec-card">
+        <img src="assets/images/stow_vs_northRoyalton_example.jpg" alt="Game" />
+        <div>
+          <span>OCTOBER 30, 2022</span>
+          <strong>Varsity Softball Wilson - Henryetta High School Vs. Mounds High School</strong>
+        </div>
+      </div>
+      <div class="rec-card">
+        <img src="assets/images/stow_vs_northRoyalton_example.jpg" alt="Game" />
+        <div>
+          <span>OCTOBER 30, 2022</span>
+          <strong>Varsity Softball Wilson - Henryetta High School Vs. Mounds High School</strong>
+        </div>
+      </div>
+      <div class="rec-card">
+        <img src="assets/images/stow_vs_northRoyalton_example.jpg" alt="Game" />
+        <div>
+          <span>OCTOBER 30, 2022</span>
+          <strong>Varsity Softball Wilson - Henryetta High School Vs. Mounds High School</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<osl-footer-flux></osl-footer-flux>

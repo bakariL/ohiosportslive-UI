@@ -1,0 +1,154 @@
+<section class="team-profile">
+  <div class="team-hero">
+    <div class="team-logo">
+      <img [src]="teamLogoUrl" alt="Team" />
+      <label class="upload-btn">
+        Update logo
+        <input type="file" accept="image/*" (change)="onLogoSelected($event)" />
+      </label>
+    </div>
+    <div class="team-info">
+      <h1>{{ teamName }}</h1>
+      <p>
+        It is a long established fact that a reader will be distracted by the readable
+        content of a page when looking at its layout.
+      </p>
+      <div class="team-meta">🏀 Basketball · Boys · Marion, OH</div>
+      <div class="team-actions">
+        <button class="btn primary" type="button" (click)="toggleFollow()">
+          {{ isFollowing ? 'Following' : 'Follow' }}
+        </button>
+        <button class="share-btn" type="button" (click)="openShare()">
+          <i class="fas fa-share"></i>
+          Share
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="team-tabs">
+    <button class="tab" [class.active]="activeTab === 'profile'" (click)="setActiveTab('profile')">Team Profile</button>
+    <button class="tab" [class.active]="activeTab === 'stats'" (click)="setActiveTab('stats')">Team Stats</button>
+    <button class="tab" [class.active]="activeTab === 'players'" (click)="setActiveTab('players')">Players</button>
+    <button class="tab" [class.active]="activeTab === 'schedule'" (click)="setActiveTab('schedule')">Full Schedule</button>
+    <button class="tab" [class.active]="activeTab === 'past'" (click)="setActiveTab('past')">Past Games</button>
+  </div>
+
+  <div class="team-content" *ngIf="activeTab === 'profile'">
+    <div class="two-column">
+      <div class="card">
+        <h2>Top 5 players</h2>
+        <div class="list-row" *ngFor="let player of players | slice:0:5">
+          <div class="avatar"></div>
+          <div>
+            <strong>{{ player.name }}</strong>
+            <div class="muted">{{ player.detail }}</div>
+          </div>
+          <button class="pill">View Player</button>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Games</h2>
+        <div class="game-card">
+          <div class="score">
+            <span>93</span>
+            <span class="muted">Q3</span>
+            <span>137</span>
+          </div>
+          <div class="muted">Live now</div>
+        </div>
+        <div class="game-card">
+          <div class="muted">Upcoming</div>
+          <div class="score">
+            <span>PHS</span>
+            <span>vs</span>
+            <span>BW</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Highlights</h2>
+    <div class="highlight-grid">
+      <div class="highlight-card" *ngFor="let card of [1,2,3,4]">
+        <img src="assets/images/stow_vs_northRoyalton_example.jpg" alt="Highlight" />
+        <div>
+          <span class="muted">OCTOBER 30, 2022</span>
+          <strong>Varsity Softball Wilson - Henryetta High School Vs. Mounds High School</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="team-content" *ngIf="activeTab === 'players'">
+    <div class="card">
+      <h2>Players</h2>
+      <div class="player-row" *ngFor="let player of players" [routerLink]="['/player', player.id]">
+        <div class="avatar"></div>
+        <div class="player-info">
+          <strong>{{ player.name }}</strong>
+          <div class="muted">{{ player.detail }}</div>
+          <div class="player-meta">{{ player.position }} · Grade {{ player.grade }}</div>
+        </div>
+        <button class="pill">View Player</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="team-content" *ngIf="activeTab === 'stats'">
+    <div class="card">
+      <h2>Team Stats</h2>
+      <div class="stats-grid">
+        <div class="stat-item" *ngFor="let stat of teamStats">
+          <div class="stat-label">{{ stat.label }}</div>
+          <div class="stat-value">{{ stat.value }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="team-content" *ngIf="activeTab === 'schedule'">
+    <div class="card">
+      <div class="schedule-header">
+        <h2>Full Schedule</h2>
+        <select class="year-select" [ngModel]="selectedScheduleYear" (ngModelChange)="onScheduleYearChange($event)">
+          <option *ngFor="let year of scheduleYears" [value]="year">{{ year }}</option>
+        </select>
+      </div>
+      <div class="game-row" *ngFor="let game of scheduleGames">
+        <div class="game-date">
+          <strong>{{ game.date }}</strong>
+          <div class="muted">{{ game.time }}</div>
+        </div>
+        <div class="game-opponent">
+          <div class="badge">{{ game.homeAway }}</div>
+          <strong>vs {{ game.opponent }}</strong>
+          <div class="muted">{{ game.location }}</div>
+        </div>
+        <div class="game-status" [class.live]="game.status === 'Live'">
+          {{ game.status }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="team-content" *ngIf="activeTab === 'past'">
+    <div class="card">
+      <h2>Past Games</h2>
+      <div class="game-row" *ngFor="let game of pastGames">
+        <div class="game-date">
+          <strong>{{ game.date }}</strong>
+          <div class="muted">{{ game.time }}</div>
+        </div>
+        <div class="game-opponent">
+          <div class="badge">{{ game.homeAway }}</div>
+          <strong>vs {{ game.opponent }}</strong>
+          <div class="muted">{{ game.location }}</div>
+        </div>
+        <div class="game-score">
+          {{ game.teamScore }} - {{ game.opponentScore }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<section class="live-scores-page">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a class="breadcrumb-link" [routerLink]="['/']">Home</a>
+    <span class="breadcrumb-separator">/</span>
+    <span class="breadcrumb-current">Live Games</span>
+  </nav>
+
+  <section class="top-banner">
+    <osl-upcoming-game-top-ddl></osl-upcoming-game-top-ddl>
+    <osl-game-feed-top></osl-game-feed-top>
+  </section>
+
+  <section class="live-scores">
+    <osl-live-scores-full></osl-live-scores-full>
+  </section>
+
+  <section class="footer">
+    <osl-footer-flux></osl-footer-flux>
+  </section>
+</section>

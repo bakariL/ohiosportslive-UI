@@ -21,7 +21,6 @@
     "@angular/platform-browser-dynamic": "^17.3.6",
     "@angular/router": "^17.3.6",
     "@auth0/angular-jwt": "^5.1.2",
-    "@datorama/akita": "^8.0.0",
     "@fortawesome/fontawesome-free": "^6.4.0",
     "@material/dialog": "^14.0.0",
     "@material/tabs": "^2.3.0",
@@ -29,30 +28,32 @@
     "@ngneat/elf-cli-ng": "^1.0.0",
     "@ngneat/elf-entities": "^4.4.4",
     "@ngneat/until-destroy": "^9.2.3",
-    "@ngrx/effects": "^14.3.3",
-    "@ngrx/store": "^14.3.3",
+    "@ngrx/effects": "^17.2.0",
+    "@ngrx/store": "^17.2.0",
     "@progress/kendo-data-query": "^1.6.0",
     "@types/lodash.clonedeep": "^4.5.7",
-    "@videogular/ngx-videogular": "^7.0.1",
+    "esbuild": "^0.27.2",
     "i": "^0.3.7",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "lodash.clonedeep": "^4.5.0",
     "ngx-uploadcare-widget": "^4.0.0",
-    "ngx-videogular": "^13.2.4",
     "npm": "^9.3.1",
+    "plyr": "^3.8.4",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "uploadcare-widget": "^3.21.8",
     "zone.js": "~0.14.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.3.6",
     "@angular/cli": "^17.3.6",
     "@angular/compiler-cli": "^17.3.6",
-    "@ngrx/eslint-plugin": "^14.3.3",
+    "@ngrx/eslint-plugin": "^17.2.0",
     "@types/core-js": "^2.5.5",
     "@types/jasmine": "~4.0.0",
     "@types/lodash-es": "^4.17.6",
+    "@types/node": "^20.11.30",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -71,5 +72,6 @@
         "@ngneat/elf-cli-ng"
       ]
     }
-  }
+  },
+  "overrides": {}
 }

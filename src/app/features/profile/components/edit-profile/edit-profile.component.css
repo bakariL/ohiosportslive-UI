@@ -1,0 +1,83 @@
+.edit-profile {
+  min-height: 100vh;
+  background: #f6f6f6;
+  padding: 24px 16px 60px;
+}
+
+.header h1 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.form-card {
+  margin-top: 16px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+input,
+textarea {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn {
+  border-radius: 999px;
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #c4183b;
+  color: #ffffff;
+  border-color: #c4183b;
+}
+
+.btn.ghost {
+  background: #ffffff;
+  border: 1px solid #d7dbe6;
+  color: #30374a;
+}
+
+@media (min-width: 768px) {
+  .edit-profile {
+    padding: 32px 32px 80px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .form-card {
+    max-width: 600px;
+  }
+}

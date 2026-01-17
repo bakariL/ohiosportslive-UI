@@ -1,24 +1,72 @@
-<div class="container">
-  <form [formGroup]="form" (submit)="submit()">
-    <h1>please register</h1>
-    <input
-      formControlName="name"
-      required
-      class="form-control"
-      placeholder="user name"
-    />
-    <input
-      formControlName="email"
-      required
-      class="form-control"
-      placeholder="email address"
-    />
-    <input
-      formControlName="password"
-      required
-      class="form-control"
-      placeholder="password"
-    />
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
+<section class="auth-screen">
+  <div class="auth-card">
+    <h1>What is your role?</h1>
+
+    <div class="role-tabs">
+      <button type="button" class="role-pill" [class.active]="activeRole === 'Fan'" (click)="setRole('Fan')">I am a fan</button>
+      <button type="button" class="role-pill" [class.active]="activeRole === 'Player'" (click)="setRole('Player')">I am a player</button>
+      <button type="button" class="role-pill" [class.active]="activeRole === 'Coach'" (click)="setRole('Coach')">I am a coach</button>
+      <button type="button" class="role-pill" [class.active]="activeRole === 'Scorekeeper'" (click)="setRole('Scorekeeper')">Scorekeeper</button>
+      <button type="button" class="role-pill" [class.active]="activeRole === 'Event Organizer'" (click)="setRole('Event Organizer')">Event organizer</button>
+      <button type="button" class="role-pill" [class.active]="activeRole === 'Administrator'" (click)="setRole('Administrator')">Administrator</button>
+    </div>
+
+    <form [formGroup]="form" (submit)="submit()" class="auth-form">
+      <div class="grid">
+        <input formControlName="Name" placeholder="First name" required />
+        <input placeholder="Last name" />
+        <input formControlName="Email" placeholder="Email address" required />
+        <input formControlName="Password" placeholder="Create a password" required type="password" />
+      </div>
+
+      <div class="upload-card" *ngIf="activeRole === 'Player'">
+        <div class="upload-preview" [class.filled]="profilePhotoUrl">
+          <img *ngIf="profilePhotoUrl" [src]="profilePhotoUrl" alt="Profile preview" />
+          <span *ngIf="!profilePhotoUrl">Upload a profile picture</span>
+        </div>
+        <label class="upload-btn">
+          Upload profile picture
+          <input type="file" accept="image/*" (change)="onProfilePhotoSelected($event)" />
+        </label>
+      </div>
+
+      <div class="grid" *ngIf="activeRole === 'Player'">
+        <input formControlName="School" placeholder="Select your school" />
+        <input formControlName="TeamName" placeholder="Select your team" />
+        <input formControlName="Instagram" placeholder="Instagram @username" />
+        <input placeholder="DOB" />
+        <input formControlName="City" placeholder="City" />
+        <input formControlName="State" placeholder="State" />
+        <input formControlName="Height" placeholder="Height" />
+        <input formControlName="Weight" placeholder="Weight" />
+      </div>
+
+      <div class="upload-card" *ngIf="activeRole === 'Coach' || activeRole === 'Event Organizer'">
+        <div class="upload-preview" [class.filled]="teamLogoUrl">
+          <img *ngIf="teamLogoUrl" [src]="teamLogoUrl" alt="Team logo" />
+          <span *ngIf="!teamLogoUrl">Upload a team logo</span>
+        </div>
+        <label class="upload-btn">
+          Upload team logo
+          <input type="file" accept="image/*" (change)="onTeamLogoSelected($event)" />
+        </label>
+      </div>
+
+      <div class="upload-card" *ngIf="activeRole === 'Player'">
+        <label class="upload-btn">
+          Upload highlight video (optional)
+          <input type="file" accept="video/*" (change)="onHighlightVideoSelected($event)" />
+        </label>
+        <div class="upload-helper" *ngIf="highlightVideoName">{{ highlightVideoName }}</div>
+      </div>
+
+      <div class="grid" *ngIf="activeRole !== 'Player'">
+        <input formControlName="TeamName" placeholder="Team or organization" />
+        <input formControlName="City" placeholder="City" />
+      </div>
+
+      <button class="primary-btn" type="submit">Create account</button>
+      <button class="text-btn" type="button" [routerLink]="['/auth/login']">Skip for now</button>
+    </form>
+  </div>
+</section>

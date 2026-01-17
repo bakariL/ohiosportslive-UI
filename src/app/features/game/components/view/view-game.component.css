@@ -1,0 +1,137 @@
+.game-preview {
+	min-height: 100vh;
+	background: #f6f6f6;
+	padding: 24px 16px 60px;
+}
+
+.hero {
+	display: grid;
+	gap: 16px;
+	background: #1f1f1f;
+	color: #ffffff;
+	padding: 20px;
+	border-radius: 16px;
+}
+
+.badge {
+	background: rgba(255, 255, 255, 0.15);
+	padding: 6px 12px;
+	border-radius: 999px;
+	font-size: 11px;
+}
+
+.hero-info h1 {
+	margin: 10px 0 6px;
+	font-size: 20px;
+}
+
+.meta {
+	font-size: 12px;
+	color: #c7c7c7;
+}
+
+.cta {
+	margin-top: 12px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.btn {
+	border-radius: 999px;
+	padding: 8px 14px;
+	border: 1px solid transparent;
+	font-size: 12px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.btn.primary {
+	background: #c4183b;
+	color: #ffffff;
+	border-color: #c4183b;
+}
+
+.btn.ghost {
+	background: transparent;
+	color: #ffffff;
+	border-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero-card {
+	background: #111111;
+	border-radius: 14px;
+	padding: 16px;
+	display: grid;
+	gap: 10px;
+	align-items: center;
+	text-align: center;
+}
+
+.team {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	font-size: 14px;
+}
+
+.logo {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background: #c4183b;
+}
+
+.vs {
+	font-weight: 700;
+	font-size: 16px;
+}
+
+.time,
+.location {
+	font-size: 12px;
+	color: #c7c7c7;
+}
+
+.details {
+	margin-top: 16px;
+	display: grid;
+	gap: 16px;
+}
+
+.card {
+	background: #ffffff;
+	border-radius: 14px;
+	padding: 16px;
+	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+	margin: 0 0 8px;
+	font-size: 16px;
+}
+
+.card p,
+.card ul {
+	margin: 0;
+	font-size: 12px;
+	color: #5d6677;
+}
+
+.card ul {
+	padding-left: 18px;
+	display: grid;
+	gap: 6px;
+}
+
+@media (min-width: 768px) {
+	.game-preview {
+		padding: 32px 32px 80px;
+	}
+
+	.hero {
+		grid-template-columns: 1.6fr 1fr;
+		align-items: center;
+	}
+}

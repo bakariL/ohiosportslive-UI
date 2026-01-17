@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'footer-flux',
+  selector: 'osl-footer-flux',
   templateUrl: './footer-flux.component.html',
   styleUrls: ['./footer-flux.component.css']
 })

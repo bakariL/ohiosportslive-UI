@@ -1,23 +1,31 @@
-<div class="custom-navbar">
+<header class="custom-navbar">
   <div class="navbar-content">
-    <span class="logo">OhioSportsLive</span>
+    <a class="logo" [routerLink]="['/']">OHIOSPORTSLIVE</a>
+
     <div class="search-container">
-      <input type="text" placeholder="Search game, player, team">
-      <!-- <button type="button">
+      <input
+        type="text"
+        placeholder="Search a game, team or player"
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="submitSearch()"
+      />
+      <button class="search-button" type="button" aria-label="Search" (click)="submitSearch()">
         <i class="fas fa-search"></i>
-      </button> -->
+      </button>
     </div>
-    <ul class="nav-links">
-      <li><a href="#">Basketball</a></li>
-      <li><a href="#">Football</a></li>
-      <li><a href="#">Volleyball</a></li>
-    </ul>
-    <div class="account-tab">
-      My Account
-      <i class="fas fa-user-circle"></i>
-    </div>
+
+    <nav class="nav-links">
+      <a [routerLink]="['/basketball']">Basketball</a>
+      <a [routerLink]="['/football']">Football</a>
+      <a [routerLink]="['/volleyball']">Volleyball</a>
+    </nav>
+
+    <button class="account-tab" type="button" [routerLink]="['/profile']">
+      <i class="fas fa-user"></i>
+      <span>My account</span>
+    </button>
   </div>
-</div>
+</header>
 
 
 

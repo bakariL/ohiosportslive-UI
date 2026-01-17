@@ -1,0 +1,50 @@
+<section class="scorekeeper">
+  <div class="hero">
+    <h1>Scoreboard Controller</h1>
+    <p>Manual scoring for live events.</p>
+  </div>
+
+  <div class="scoreboard-card">
+    <div class="team-score">
+      <span class="label">Home</span>
+      <span class="score">{{ homeScore }}</span>
+      <div class="score-actions">
+        <button (click)="incrementHome(1)">+1</button>
+        <button (click)="incrementHome(2)">+2</button>
+        <button (click)="incrementHome(3)">+3</button>
+      </div>
+    </div>
+
+    <div class="center-info">
+      <div class="vs">VS</div>
+      <div class="period">Q{{ period }}</div>
+      <button class="ghost" (click)="incrementPeriod()">Next period</button>
+    </div>
+
+    <div class="team-score">
+      <span class="label">Away</span>
+      <span class="score">{{ awayScore }}</span>
+      <div class="score-actions">
+        <button (click)="incrementAway(1)">+1</button>
+        <button (click)="incrementAway(2)">+2</button>
+        <button (click)="incrementAway(3)">+3</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="control-card">
+      <h2>Possession</h2>
+      <div class="toggle">
+        <button [class.active]="possession === 'home'" (click)="togglePossession('home')">Home</button>
+        <button [class.active]="possession === 'away'" (click)="togglePossession('away')">Away</button>
+      </div>
+    </div>
+
+    <div class="control-card">
+      <h2>Actions</h2>
+      <button class="reset" (click)="resetScores()">Reset scores</button>
+      <button class="primary">Publish update</button>
+    </div>
+  </div>
+</section>

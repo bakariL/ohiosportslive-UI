@@ -15,8 +15,8 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
-        <button mat-button [routerLink]="['view/watch', game.gameId]"> Watch </button>  
-        <button mat-button  [routerLink]="[game.gameId]"  > Details </button>
+        <button mat-button [routerLink]="['/watch', game.gameId]"> Watch </button>  
+        <button mat-button  [routerLink]="['/watch', game.gameId]"  > Details </button>
         </mat-card-actions>
       </mat-card> -->
 
@@ -33,13 +33,13 @@
     <div class="carousel-inner">
       <!-- Single item -->
       <div class="carousel-item active">
-        <a [routerLink]="['view/watch', game.gameId]">
+        <a [routerLink]="['/watch', game.gameId]">
           <img
             src="\assets\images\Maple Garfield helmet matchup.png"
             class="d-block w-100"
             alt="Sunset Over the City"
         /></a>
-        <button mat-button [routerLink]="[game.gameId]">Details</button>
+        <button mat-button [routerLink]="['/watch', game.gameId]">Details</button>
         <div class="carousel-caption d-none d-md-block"></div>
       </div>
 

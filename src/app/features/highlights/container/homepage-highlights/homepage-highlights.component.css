@@ -1,0 +1,120 @@
+.highlights {
+  width: 95%;
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 8px 16px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1200px) {
+  .highlights {
+    max-width: 1280px;
+  }
+}
+
+.highlights__title {
+  color: #c4183b;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.highlights__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 16px;
+}
+
+.highlights__stack {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.highlight-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 220px;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.35), transparent 55%),
+    linear-gradient(135deg, #bdbdbd 0%, #707070 100%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-card--large {
+  min-height: 380px;
+}
+
+.highlight-card__badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #4a4a4a;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.highlight-card__play {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+}
+
+.highlight-card__play::before {
+  content: '';
+  position: absolute;
+  left: 26px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 18px solid #b44;
+}
+
+.highlight-card__overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 16px 20px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+  color: #ffffff;
+}
+
+.highlight-card__overlay h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .highlights__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight-card--large {
+    min-height: 300px;
+  }
+
+  .highlights__stack {
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .highlights {
+    padding: 8px 12px;
+  }
+}

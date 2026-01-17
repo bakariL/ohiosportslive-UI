@@ -1,115 +1,120 @@
-
-/* Custom styles for the custom navbar */
 .custom-navbar {
-  background-color: #C4183B;
-  color: white;
+  background-color: #c4183b;
+  color: #ffffff;
   width: 100%;
-  max-width: 1920px; /* Set the maximum width to 1920px */
-  margin: 0 auto;
-  padding: 10px 20px;
+  padding: 12px 24px;
+  box-sizing: border-box;
 }
 
 .navbar-content {
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
-  margin-right: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  font-style: italic;
+  white-space: nowrap;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .search-container {
-  flex: 1;
-  max-width: 300px; /* Adjust the max-width as needed */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  max-width: 420px;
+  flex: 1 1 420px;
 }
 
 .search-container input {
   width: 100%;
-  padding: 6px 12px;
   border: none;
-  border-radius: 4px;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
 }
 
-.search-container button {
-  background-color: white;
-  color: white;
+.search-container input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.search-button {
+  background: transparent;
   border: none;
-  padding: 6px 12px;
-  margin-left: 10px;
-  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
+  align-items: center;
+  gap: 24px;
   margin-left: auto;
 }
 
-.nav-links li {
-  margin-left: 20px;
-}
-
 .nav-links a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
 }
 
+.account-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #ffffff;
+  color: #111111;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
 
 .account-tab i {
-  margin-left: 5px;
+  font-size: 14px;
 }
-
-.account-tab{
-  box-sizing: border-box;
-  margin-left: 20px;
-  margin-right: 30px;
-  color: black;
-
-display: flex;
-flex-direction: row;
-align-items: center;
-padding:  12px;
-gap: 10px;
-
-width: 140px;
-height: 35px;
-
-background: #FFFFFF;
-
-border: 1.5px solid #FFFFFF;
-border-radius: 1000px;
-
-flex: none;
-order: 1;
-flex-grow: 0;
-}
-
-
 
 @media (max-width: 767px) {
-  /* Show the tab group and account tab on mobile */
-  mat-tab-group {
-    display: block;
+  .custom-navbar {
+    padding: 10px 16px;
+  }
+
+  .navbar-content {
+    gap: 12px;
+  }
+
+  .search-container {
+    order: 3;
+    flex: 1 1 100%;
+    max-width: none;
+  }
+
+  .nav-links {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    gap: 16px;
+    margin-left: 0;
   }
 
   .account-tab {
-    display: flex;
-    align-items: center;
-  }
-
-  /* Hide the search container on mobile */
-  .search-container {
-    display: none;
-  }
-
-  /* Show the search icon in the account tab on mobile */
-  .account-tab .profile-icon {
-    display: inline-block;
-    font-size: 24px;
-    color: #999999;
+    order: 1;
   }
 }
-
 

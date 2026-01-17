@@ -1,0 +1,48 @@
+<section class="live-scores-full">
+  <div class="top-row">
+    <div class="top-row-left">
+      <span class="title-livescore">Livescores</span>
+      <span class="badge">4 Games</span>
+    </div>
+    <div class="top-row-tabs">
+      <button class="tab active">Basketball</button>
+      <button class="tab">Football</button>
+      <button class="tab">Volleyball</button>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <mat-card class="example-card" *ngFor="let game of games" [routerLink]="['/watch', game.gameId]">
+      <mat-card-content>
+        <div class="data-row">
+          <div class="column">
+            <h2>{{ game.homeScore }}</h2>
+          </div>
+          <div class="column">
+            <h2>{{ game.awayScore }}</h2>
+          </div>
+        </div>
+        <div class="data-row second-row">
+          <div class="column">
+            <img src="path/to/your/image1.jpg" class="centered-image">
+          </div>
+          <div class="column">
+            <h3>{{ game.quarter }}</h3>
+          </div>
+          <div class="column">
+            <img src="path/to/your/image2.jpg" class="centered-image">
+          </div>
+        </div>
+        <div class="data-row third-row">
+          <div class="column">
+            <span id="teamNames">{{ game.homeTeam }}</span>
+          </div>
+          <div class="column">
+            <span id="teamNames">{{ game.awayTeam }}</span>
+          </div>
+        </div>
+      </mat-card-content>
+      <button class="view-game-btn" [routerLink]="['/watch', game.gameId]">View Game</button>
+    </mat-card>
+  </div>
+</section>

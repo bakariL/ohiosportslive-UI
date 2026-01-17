@@ -1,45 +1,134 @@
 .custom-card {
-  position: relative; /* Make the card position relative */
+  position: relative;
   width: 100%;
-  max-width: 200px;
-  height: 50px; /* Adjust the height as needed */
-  border-radius: 8px;
-  background-color: white;
-  margin-left: 10px; /* Reduce left margin */
-  margin-top: 17px;
-  margin-bottom: 7px; /* Add margin bottom to reduce space at the bottom */
-  color: black;
+  max-width: 150px;
+  height: 70px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin: 10px 0 0;
+  color: #111111;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  border: 1px solid #d9d9d9;
+  overflow: visible;
 }
 
 .card-title {
-  text-align: center;
-  font-size: 14px;
-  font-weight: bold;
-}
-.card-content {
   position: absolute;
-  top: 75%; /* Position it at the vertical center of the card */
-  left: 55%; /* Position it at the horizontal center of the card */
-  transform: translate(-50%, -50%); 
-  width: 100%;
-  padding: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35px;
+  background: #1f1f1f;
+  color: #ffffff;
+  padding: 0 10px;
+  border-radius: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.upcoming-games-select {
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  padding: 8px 16px;
-  font-size: 16px;
-  color: black;
+.card-content {
   width: 100%;
-  max-width: 150px;
+  padding: 35px 10px 8px;
+}
+
+.card-content::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35px;
+  height: 1px;
+  background: #d9d9d9;
+}
+
+.select-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.select-trigger {
+  width: 100%;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid #111111;
+  background: #ffffff;
+  color: #111111;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 0 28px 0 12px;
+  box-sizing: border-box;
+}
+
+.select-label {
+  flex: 1;
+  text-align: center;
+}
+
+.select-chevron {
+  position: absolute;
+  right: 10px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #111111;
+  border-radius: 6px;
+}
+
+.select-chevron::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #111111;
+  border-bottom: 2px solid #111111;
+  transform: rotate(45deg);
+}
+
+.select-panel {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  margin: 6px 0 0;
+  padding: 6px 0;
+  list-style: none;
+  z-index: 10;
+}
+
+.select-option {
+  padding: 6px 12px;
+  font-size: 13px;
+  color: #111111;
+  cursor: pointer;
+  text-align: center;
+}
+
+.select-option:hover {
+  background: #f3f3f3;
+}
+
+::ng-deep .upcoming-field .mat-mdc-form-field-subscript-wrapper {
+  display: none;
 }
 
 .mat-option {
-  font-size: 16px;
-  color: black;
+  font-size: 12px;
+  color: #111111;
 }

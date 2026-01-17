@@ -1,20 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store, select } from '@ngrx/store';
 import { UntilDestroy } from '@ngneat/until-destroy';
-import { Observable, of } from 'rxjs';;
+import { Observable, of } from 'rxjs';
+import { Game } from '../../models/game-models';
+import { loadGames } from '../../store/game.actions';
+import { selectGames } from '../../store/game.selectors';
 import { GameService } from '../../services/game.service';
 import { CreateNewGameState } from '../create/state/create-new-game-state.model';
 import { CreateNewGameStateService } from '../create/state/create-new-game-state.service';
-import { UpcomingGamesQuery } from '../create/state/upcoming-game-query';
-import { UpcomingGamesStore } from '../create/state/upcoming-game-store';
-import {  UpcomingGameOdataStateStore } from './state/upcoming-game-odata-state.store';
-import { GameListService } from './state/game-list.service';
-import { GameListState } from './state/game-list.store';
-import { UpcomingGameOdataState } from './state/upcoming-game-odata-state.store';
-import { Game, UpcomingGamesResponse } from '../../models/game-models';
-import { Store, select } from '@ngrx/store';
-import { loadGames } from '../../store/game.actions';
-import { selectGames } from '../../store/game.selectors';
 
 
 @UntilDestroy()
@@ -23,64 +17,36 @@ import { selectGames } from '../../store/game.selectors';
   templateUrl: './upcoming-games-list.component.html',
   styleUrls: ['./upcoming-games-list.component.css'],
 })
-export class UpcomingGamesListComponent implements OnInit, OnDestroy {
-  odataStoreState = of<UpcomingGameOdataState>();
-  gameList$ =  of<UpcomingGamesResponse[]>();
-  isLoading = of<boolean>();
-  games$: Observable<Game[]> = of([]); // Example initialization
-
-
-  activeGame = of<string>();
-
+export class UpcomingGamesListComponent implements OnInit {
+  games$: Observable<Game[]> = of([]);
   youtubeLiveSports: any[] = [];
+  isLoading = false;
 
-  constructor(  private _gameService: GameService, 
-    private _gameListService: GameListService,
-    private _router: Router,    
-    private _upcomingGameQuery: UpcomingGamesQuery,
-    private _upcomingGameOdataStateQuery: UpcomingGameOdataStateStore,
-    private _upcomingGameStore: UpcomingGamesStore,
-    private _createNewGameService: CreateNewGameStateService,
-    private store: Store
- ) {}
-  ngOnInit() {
+  constructor(
+    private _router: Router,
+    private store: Store,
+    private _gameService: GameService,
+    private _createNewGameService: CreateNewGameStateService
+  ) {}
 
-
-    // this.gameList$ = this._upcomingGameQuery.getUpcomingGames();
+  ngOnInit(): void {
     this.store.dispatch(loadGames());
     this.games$ = this.store.pipe(select(selectGames));
-    // console.log(this.gameList$, '  <<<<')
-
-    // this.gameList = this._upcomingGameQuery.getUpcomingGames();
-    // console.log('games: ', this.gameList)
-    // this.odataStoreState = this._upcomingGameOdataStateQuery.select();
-
   }
-  ngOnDestroy() {}
 
-  // loadUpcomingGames(){
-  //   // return this._gameService
-  //   //       .getListofUpcomingGames()
-  //   //       .subscribe((games) => {
-  //   //         this.gameList = games;
-  //   //       })
-  // }
-
-  createNewGame(game: CreateNewGameState){
+  createNewGame(game: CreateNewGameState) {
     this._createNewGameService.add(game);
   }
-
 
   loadLiveYoutubeSportsGames() {
     return this._gameService
       .getListofLiveYouTubeSportsVideos()
-      .subscribe((val) => {
-        (this.youtubeLiveSports = val), console.log(this.youtubeLiveSports);
+      .subscribe((val: any[]) => {
+        this.youtubeLiveSports = val;
       });
   }
 
   addNew() {
-    console.log('add new here');
     this._router.navigateByUrl('games/add');
   }
 
@@ -89,9 +55,8 @@ export class UpcomingGamesListComponent implements OnInit, OnDestroy {
   }
 
   getGame(id: number) {
-    this._gameService.getGame(id).subscribe((data) => {
+    this._gameService.getGame(id).subscribe((data: unknown) => {
       this._router.navigateByUrl('games/' + id);
-      console.log('get game function hit :)  ');
       //this.game = data
     });
   }

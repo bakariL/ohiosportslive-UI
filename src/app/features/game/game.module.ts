@@ -24,10 +24,11 @@ const routes: Routes = [
   { path: 'view', component: GameListFullPageComponent },
   { path: 'view/watch/:gameId', component: WatchComponent },
   { path: 'view/:gameId', component: ViewGameComponent },
+  { path: 'preview/:gameId', component: ViewGameComponent },
 ];
 
 @NgModule({
-  declarations: [UpcomingGameComponent, ViewGameComponent,FileUploadComponent],
+  declarations: [ ViewGameComponent,FileUploadComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

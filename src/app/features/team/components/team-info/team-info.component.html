@@ -1,0 +1,13 @@
+<ng-container [ngSwitch]="variant">
+  <div *ngSwitchCase="'score'" class="team" [class.flip]="flip">
+    <div class="team-logo">{{ team.short }}</div>
+    <div class="team-score">{{ team.score }}</div>
+  </div>
+  <a
+    *ngSwitchCase="'heading'"
+    class="team-heading link"
+    [routerLink]="['/team', team.id]"
+  >
+    {{ team.name }}
+  </a>
+</ng-container>

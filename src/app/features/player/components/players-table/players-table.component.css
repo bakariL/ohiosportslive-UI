@@ -1,0 +1,49 @@
+.players-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stats-table {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.stats-row.clickable {
+  cursor: pointer;
+}
+
+.stats-row.clickable:hover {
+  background: rgba(45, 127, 249, 0.06);
+}
+
+.stats-row.header {
+  font-weight: 700;
+  color: #6f6f6f;
+}
+
+.expand-btn {
+  margin: 10px auto 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}

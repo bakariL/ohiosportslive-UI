@@ -17,7 +17,6 @@ export class AuthService {
   constructor(private _http: HttpClient) {}
 
   registerSubmit(model: RegistrationModel): Observable<RegistrationModel> {
-    console.warn(model + ' : register service.');
     return this._http
       .post<RegistrationModel>(
         FluxConnections.FLUX_API_URI + 'api/auth/signup',
@@ -45,7 +44,6 @@ export class AuthService {
   }
 
   IsLoggedInFlux(userName: string): Observable<boolean> {
-    console.log('service   dsadasfdasdf');
     return this._http.get<boolean>(
       FluxConnections.FLUX_API_URI + 'api/auth/is-active'
     );

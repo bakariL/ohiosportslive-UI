@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
-import { ChildActivationStart, Router } from '@angular/router';
-import { LoginModel } from '../../../models/auth';
+import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
@@ -21,20 +20,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      email: '',
-      password: '',
-      userName: '',
+      Email_Address: ['', [Validators.required, Validators.email]],
+      Password: ['', [Validators.required]],
     });
   }
 
   login(): void {
-    var isChecked = true;
-
     if (!this.form.valid) {
-      for (var a in this.form.controls) {
-        this.form.controls[a].markAsDirty();
-        this.form.controls[a].updateValueAndValidity();
-        isChecked = false;
+      for (const controlName in this.form.controls) {
+        this.form.controls[controlName].markAsDirty();
+        this.form.controls[controlName].updateValueAndValidity();
       }
     }
     if (this.form.valid) {

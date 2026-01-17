@@ -1,0 +1,97 @@
+<section class="profile-page">
+  <div class="profile-hero">
+    <div class="profile-card">
+      <div class="avatar"></div>
+      <div class="profile-info">
+        <h1>{{ user.name }}</h1>
+        <div class="profile-meta">{{ user.role }} · {{ user.location }}</div>
+        <div class="profile-actions">
+          <button class="btn primary" [routerLink]="['/profile/edit']">Edit profile</button>
+          <button class="btn ghost" [routerLink]="['/profile/subscription']">Manage subscription</button>
+        </div>
+      </div>
+    </div>
+    <div class="membership-card">
+      <h2>Membership</h2>
+      <div class="membership-row">
+        <span>Status</span>
+        <strong>Active</strong>
+      </div>
+      <div class="membership-row">
+        <span>Member since</span>
+        <strong>{{ user.memberSince }}</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-grid">
+    <div class="card">
+      <h2>Account overview</h2>
+      <div class="detail-row">
+        <span>Email</span>
+        <strong>{{ user.email }}</strong>
+      </div>
+      <div class="detail-row">
+        <span>Phone</span>
+        <strong>{{ user.phone }}</strong>
+      </div>
+      <div class="detail-row">
+        <span>Preferred sport</span>
+        <strong>Basketball</strong>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Saved teams</h2>
+      <div class="pill-row">
+        <span class="pill" *ngFor="let team of favorites">{{ team }}</span>
+      </div>
+      <button class="btn ghost small">Manage favorites</button>
+    </div>
+
+    <div class="card">
+      <h2>Following</h2>
+      <div class="follow-section" *ngIf="followedTeams.length">
+        <h3>Teams</h3>
+        <div class="pill-row">
+          <span class="pill" *ngFor="let item of followedTeams">{{ item.name }}</span>
+        </div>
+      </div>
+      <div class="follow-section" *ngIf="followedPlayers.length">
+        <h3>Players</h3>
+        <div class="pill-row">
+          <span class="pill" *ngFor="let item of followedPlayers">{{ item.name }}</span>
+        </div>
+      </div>
+      <div class="muted" *ngIf="!followedTeams.length && !followedPlayers.length">
+        Follow teams or players to see them here.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Recent activity</h2>
+      <ul class="activity-list">
+        <li *ngFor="let item of recentActivity">{{ item }}</li>
+      </ul>
+      <button class="btn ghost small">View all activity</button>
+    </div>
+
+    <div class="card">
+      <h2>Notification preferences</h2>
+      <div class="toggle-row">
+        <span>Game start alerts</span>
+        <span class="toggle on">On</span>
+      </div>
+      <div class="toggle-row">
+        <span>Score updates</span>
+        <span class="toggle">Off</span>
+      </div>
+      <div class="toggle-row">
+        <span>New highlights</span>
+        <span class="toggle on">On</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<osl-footer-flux></osl-footer-flux>

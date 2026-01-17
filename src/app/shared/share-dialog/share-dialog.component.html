@@ -1,0 +1,32 @@
+<div class="share-dialog">
+  <div class="share-header">
+    <div>
+      <div class="share-title">Share this game</div>
+      <div class="share-subtitle">Invite friends to watch live.</div>
+    </div>
+    <button class="share-close" type="button" (click)="close()">×</button>
+  </div>
+
+  <div class="share-card">
+    <div class="share-game">{{ shareTitle }}</div>
+    <div class="share-link">{{ shareUrl }}</div>
+    <button class="copy-btn" type="button" (click)="copyLink()">
+      {{ copied ? 'Copied!' : 'Copy link' }}
+    </button>
+  </div>
+
+  <div class="share-actions">
+    <button class="action-btn" type="button" (click)="shareNative()">
+      <i class="fas fa-share-alt"></i>
+      Share
+    </button>
+    <button class="action-btn" type="button" (click)="openText()">
+      <i class="fas fa-sms"></i>
+      Text
+    </button>
+    <button class="action-btn" type="button" (click)="openEmail()">
+      <i class="fas fa-envelope"></i>
+      Email
+    </button>
+  </div>
+</div>

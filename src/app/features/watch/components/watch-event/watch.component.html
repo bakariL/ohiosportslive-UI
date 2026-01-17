@@ -1,15 +1,106 @@
-<h1>Live!</h1>
-<div class="conatiner">
-  <button (click)="goToCCForm()" mat-raised-button>Purchase Ticket</button>
-  <hr />
-  <vg-player>
-    <vg-overlay-play></vg-overlay-play>
-    <vg-buffering></vg-buffering>
-    <video #media id="singleVideo" preload="auto" controls>
-      <source
-        src="http://static.videogular.com/assets/videos/videogular.mp4"
-        type="video/mp4"
-      />
-    </video>
-  </vg-player>
-</div>
+<section class="watch-page">
+  <section class="top-banner">
+    <osl-upcoming-game-top-ddl></osl-upcoming-game-top-ddl>
+    <osl-game-feed-top></osl-game-feed-top>
+  </section>
+
+  <section class="watch-hero">
+    <div class="hero-header">
+      <div class="hero-title">
+        <h1>Varsity Softball Wilson - Henryetta High School Vs. Mounds High School</h1>
+        <div class="hero-meta">Basketball · Boys · Marion, OH</div>
+      </div>
+      <div class="hero-actions">
+        <button class="ghost-btn" (click)="openShareDialog()">
+          <i class="fas fa-share"></i>
+          Share
+        </button>
+        <button class="ghost-btn" (click)="startDonateFlow()">
+          <i class="fas fa-hand-holding-heart"></i>
+          Donate
+        </button>
+        <button class="primary-btn" (click)="startPaymentFlow()">
+          <i class="fas fa-ticket-alt"></i>
+          Buy Tickets
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-score">
+      <osl-team-info teamKey="home" variant="score"></osl-team-info>
+      <div class="period">Q3</div>
+      <osl-team-info teamKey="away" variant="score" [flip]="true"></osl-team-info>
+    </div>
+
+    <div class="video-shell">
+      <iframe
+        *ngIf="videoType === 'youtube'"
+        class="video-iframe"
+        [src]="youtubeEmbedUrl"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+      <video
+        *ngIf="videoType === 'custom'"
+        #player
+        id="singleVideo"
+        class="plyr-video"
+        playsinline
+        [poster]="videoPosterUrl"
+      >
+        <source [src]="customVideoUrl" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="hero-tabs">
+      <button class="tab" [class.active]="activeTab === 'box'" (click)="setActiveTab('box')">Box Score</button>
+      <button class="tab" [class.active]="activeTab === 'team'" (click)="setActiveTab('team')">Team Stats</button>
+    </div>
+  </section>
+
+  <section class="stats-section" *ngIf="activeTab === 'box'">
+    <osl-players-table [teamKey]="'home'" [mode]="activeTab"></osl-players-table>
+    <osl-players-table [teamKey]="'away'" [mode]="activeTab"></osl-players-table>
+  </section>
+
+  <section class="team-stats" *ngIf="activeTab === 'team'">
+    <div class="stats-card">
+      <h2>Henryetta High School</h2>
+      <div class="stats-grid">
+        <div class="stat" *ngFor="let stat of teamStats.home">
+          <span class="label">{{ stat.label }}</span>
+          <strong>{{ stat.value }}</strong>
+        </div>
+      </div>
+    </div>
+    <div class="stats-card">
+      <h2>Mounds High School</h2>
+      <div class="stats-grid">
+        <div class="stat" *ngFor="let stat of teamStats.away">
+          <span class="label">{{ stat.label }}</span>
+          <strong>{{ stat.value }}</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="popular-section">
+    <h2>Popular players</h2>
+    <div class="players-row">
+      <button class="nav-arrow" type="button">‹</button>
+      <div class="player-card" *ngFor="let player of [1,2,3,4]">
+        <div class="avatar">DS</div>
+        <div class="player-name">Darrell Steward</div>
+        <div class="player-meta">5'11" · 155 lbs</div>
+        <div class="player-meta">Leesburg, GA</div>
+      </div>
+      <button class="nav-arrow" type="button">›</button>
+    </div>
+  </section>
+
+  <section class="footer">
+    <osl-footer-flux></osl-footer-flux>
+  </section>
+</section>

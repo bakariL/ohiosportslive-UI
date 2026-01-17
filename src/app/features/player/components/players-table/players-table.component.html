@@ -1,0 +1,33 @@
+<div class="players-table">
+  <osl-team-info [teamKey]="teamKey" variant="heading"></osl-team-info>
+  <div class="stats-table">
+    <div class="stats-row header">
+      <span>Player</span>
+      <span>Min</span>
+      <span>FGM</span>
+      <span>FGA</span>
+      <span>PTS</span>
+    </div>
+    <div
+      class="stats-row clickable"
+      *ngFor="let row of displayRows"
+      role="button"
+      tabindex="0"
+      (click)="goToPlayer(row.id)"
+    >
+      <span>{{ row.player }}</span>
+      <span>{{ row.min }}</span>
+      <span>{{ row.fgm }}</span>
+      <span>{{ row.fga }}</span>
+      <span>{{ row.pts }}</span>
+    </div>
+  </div>
+  <button
+    *ngIf="hasMore"
+    class="expand-btn"
+    type="button"
+    (click)="toggleExpanded()"
+  >
+    {{ expanded ? 'Collapse full score' : 'Expand full score' }}
+  </button>
+</div>

@@ -1,81 +1,70 @@
+import { JwtModule } from '@auth0/angular-jwt';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
+import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
+import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
+import { MatStepperModule } from '@angular/material/stepper';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { UcWidgetModule } from 'ngx-uploadcare-widget';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthModule } from './shared/auth/auth.module';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { GameModule } from './features/game/game.module';
-import { GameListFullPageComponent } from './features/game/container/game-list-full-page.component';
-import { JwtModule } from '@auth0/angular-jwt';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
-import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
-import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FeaturedPlayersModule } from './features/featured-players/featured-players.module';
 import { PreviousGamesListComponent } from './features/game/components/previous-games-list/previous-games-list.component';
-import { Routes } from '@angular/router';
-import { PaymentModule } from './features/payment/payment.module';
 import { TodaysGamesListComponent } from './features/game/components/todays-games-list/todays-games-list.component';
-import { TeamModule } from './features/team/team.module';
 import { UpcomingGamesListComponent } from './features/game/components/upcoming-games-list/upcoming-games-list.component';
-import { WatchModule } from './features/watch/watch.module';
-import { WatchComponent } from './features/watch/components/watch-event/watch.component';
-import { AuthGuard } from './shared/auth/services/auth.guard';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
-import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
-import { MatSortModule } from '@angular/material/sort';
-import { MatStepperModule } from '@angular/material/stepper';
-import { ReactiveFormsModule } from '@angular/forms';
-import  {MatToolbarModule} from '@angular/material/toolbar'
-import { UcWidgetModule } from 'ngx-uploadcare-widget';
-import { MatLegacyTabsModule as MatTabsModule } from '@angular/material/legacy-tabs';
-import { ScoreboardComponent } from './features/scoreboard/components/scoreboard.component';
-import { NgxSubscribeDirective } from './shared/utils/ng-subscribe.directive';
-import { FooterFluxComponent } from './shared/footer-flux/footer-flux.component';
-import { GameFeedTopBannerContainerComponent } from './shared/games-top-banner/game-feed-top-banner-container/game-feed-top-banner-container.component';
-import { GameFeedTopComponent } from './shared/games-top-banner/game-feed-top/game-feed-top.component';
-import { UpcomingGameTopDdlComponent } from './shared/games-top-banner/upcoming-game-top-ddl/upcoming-game-top-ddl.component';
-import { LiveScoresComponent } from './features/live-scores/live-scores.component';
-import { LivestreamingPreviousGameCardComponent } from './features/live-streaming/components/livestreaming-previous-game-card/livestreaming-previous-game-card.component';
-import { HomeComponent } from './features/home/container/home.component';
-import { OslHomeModule } from './features/home/home.module';
-import { LiveStreamingModule } from './features/live-streaming/live-streaming.module';
-import { StoreModule } from '@ngrx/store';
+import { GameModule } from './features/game/game.module';
 import { GameEffects } from './features/game/store/game.effects';
-import { EffectsModule } from '@ngrx/effects';
-import { reducers } from './shared/store';
-
-
-
+import { HighlightsModule } from './features/highlights/highlights.module';
+import { HomeComponent } from './features/home/container/home.component';
+import { SportHomeComponent } from './features/home/container/sport-home.component';
+import { OslHomeModule } from './features/home/home.module';
+import { LiveScoresComponent } from './features/live-scores/live-scores.component';
+import { LiveScoresFullComponent } from './features/live-scores/components/live-scores-full/live-scores-full.component';
+import { LiveScoresPageComponent } from './features/live-scores/pages/live-scores-page/live-scores-page.component';
+import { LiveStreamingModule } from './features/live-streaming/live-streaming.module';
+import { PaymentModule } from './features/payment/payment.module';
+import { EditProfileComponent } from './features/profile/components/edit-profile/edit-profile.component';
+import { ManageSubscriptionComponent } from './features/profile/components/manage-subscription/manage-subscription.component';
+import { ProfilePageComponent } from './features/profile/components/profile-page/profile-page.component';
+import { ScorekeeperDashboardComponent } from './features/scorekeeper/components/scorekeeper-dashboard/scorekeeper-dashboard.component';
+import { ScoreboardComponent } from './features/scoreboard/components/scoreboard.component';
+import { SearchResultsComponent } from './features/search/components/search-results/search-results.component';
+import { searchReducer } from './features/search/store/search.reducer';
+import { TeamModule } from './features/team/team.module';
+import { WatchModule } from './features/watch/watch.module';
+import { AuthModule } from './shared/auth/auth.module';
+import { AuthGuard } from './shared/auth/services/auth.guard';
+import { SharedModule } from './shared/shared.module';
+import { NgxSubscribeDirective } from './shared/utils/ng-subscribe.directive';
 export function tokenGetter() {
   return sessionStorage.getItem('jwt');
 }
-
-const routes: Routes = [
-  { path: 'home', component: HomeComponent
-  // , canActivate: [AuthGuard] 
-},
-];
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent,
-    WatchComponent,
+    SportHomeComponent,
+    ProfilePageComponent,
+    SearchResultsComponent,
+    EditProfileComponent,
+    ManageSubscriptionComponent,
+    ScorekeeperDashboardComponent,
     UpcomingGamesListComponent,
     PreviousGamesListComponent,
     ScoreboardComponent,
     TodaysGamesListComponent,
     NgxSubscribeDirective,
-    FooterFluxComponent,
-    GameFeedTopBannerContainerComponent,
-    GameFeedTopComponent,
-    UpcomingGameTopDdlComponent,
-    LiveScoresComponent,  
+    LiveScoresComponent,
+    LiveScoresPageComponent,
+    LiveScoresFullComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,23 +75,19 @@ const routes: Routes = [
     WatchModule,
     PaymentModule,
     LiveStreamingModule,
+    FeaturedPlayersModule,
+    HighlightsModule,
     GameModule,
     MatButtonModule,
     MatCardModule,
-    MatTableModule,
-    MatSortModule,
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatIconModule,
-    MatSelectModule,
-    MatCardModule,
-    MatButtonModule,
     MatStepperModule,
-    MatToolbarModule,
-    MatTabsModule ,
+    SharedModule,
     OslHomeModule,
+    FormsModule,
     ReactiveFormsModule,
     UcWidgetModule,
     JwtModule.forRoot({
@@ -112,8 +97,8 @@ const routes: Routes = [
         disallowedRoutes: [],
       },
     }),
-    StoreModule.forRoot({}, {}),
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot({}),
+    StoreModule.forFeature('search', searchReducer),
     EffectsModule.forRoot([GameEffects]),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

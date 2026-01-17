@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'osl-livestreaming-game-card',
   templateUrl: './livestreaming-game-card.component.html',
   styleUrls: ['./livestreaming-game-card.component.css']
 })
-export class LivestreamingGameCardComponent implements OnInit {
+export class LivestreamingGameCardComponent {
   @Input() game: any; // Define the input property 'game'
 
   // // Declare a property named game
@@ -19,9 +19,5 @@ export class LivestreamingGameCardComponent implements OnInit {
   //   teamB: 'TeamName B'
   // };
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor() {}
 }

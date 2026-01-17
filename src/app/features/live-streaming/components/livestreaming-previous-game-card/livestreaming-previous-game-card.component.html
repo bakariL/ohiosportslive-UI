@@ -1,40 +1,40 @@
-<mat-card class="example-card">
+<mat-card class="example-card" [routerLink]="['/watch', game?.gameId || game?.id || 1]">
     <mat-card-content>
       <!-- First Row of Data -->
       <div class="data-row">
         <div class="column">
-          <h2>52</h2>
+          <h2>{{ game?.homeScore ?? '-' }}</h2>
         </div>
         <div class="column">
-          <h2>61</h2>
+          <h2>{{ game?.awayScore ?? '-' }}</h2>
         </div>
       </div>
       <!-- Second Row of Data -->
       <div class="data-row second-row">
         <div class="column">
           <div class="profile-image-container">
-            <img src="path/to/your/image1.jpg" class="profile-image">
+            <img [src]="game?.imageHome || 'assets/images/stow_vs_northRoyalton_example.jpg'" class="profile-image">
           </div>
         </div>
         <div class="column">
-          <h3>Q3</h3>
+          <h3>{{ game?.quarter ?? 'Final' }}</h3>
         </div>
         <div class="column">
           <div class="profile-image-container">
-            <img src="path/to/your/image2.jpg" class="profile-image">
+            <img [src]="game?.imageAway || 'assets/images/stow_vs_northRoyalton_example.jpg'" class="profile-image">
           </div>
         </div>
       </div>
       <!-- Third Row of Data -->
       <div class="data-row third-row">
         <div class="column">
-          <span id="teamNames">TeamName A</span>
+          <span id="teamNames">{{ game?.homeTeam ?? 'Home' }}</span>
         </div>
         <div class="column">
-          <span id="teamNames">TeamName B</span>
+          <span id="teamNames">{{ game?.awayTeam ?? 'Away' }}</span>
         </div>
       </div>
     </mat-card-content>
-    <button class="watch-game-btn">Watch Now</button>
+    <button class="watch-game-btn" [routerLink]="['/watch', game?.gameId || game?.id || 1]">Watch Now</button>
   </mat-card>
   

@@ -90,6 +90,13 @@ export class GameService {
       );
   }
 
+  getViewGamesBySport(sport: string): Observable<ViewGame[]> {
+    const encodedSport = encodeURIComponent(sport);
+    return this._http.get<ViewGame[]>(
+      `${FluxConnections.FLUX_API_URI}api/Game/viewGames?sport=${encodedSport}`
+    );
+  }
+
   getListofLiveYouTubeSportsVideos(): Observable<any[]> {
     return this._http.get<any[]>(
       FluxConnections.FLUX_API_URI + 'api/Game/viewAllYt'

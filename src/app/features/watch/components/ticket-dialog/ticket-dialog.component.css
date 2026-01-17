@@ -1,0 +1,90 @@
+.ticket-dialog {
+  padding: 24px 20px;
+  min-width: 340px;
+  max-width: 380px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ticket-breadcrumbs {
+  font-size: 11px;
+  color: #8a8a8a;
+  margin-bottom: 10px;
+}
+
+.ticket-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.ticket-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.close-btn {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.ticket-content h4 {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ticket-content p {
+  margin: 0 0 12px;
+  font-size: 11px;
+  color: #6f6f6f;
+}
+
+.price {
+  background: #f1f1f1;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.promo-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.promo-field label {
+  font-size: 11px;
+  color: #6f6f6f;
+  font-weight: 600;
+}
+
+.promo-field input {
+  height: 32px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.pay-btn {
+  width: 100%;
+  background: #2d7ff9;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+}

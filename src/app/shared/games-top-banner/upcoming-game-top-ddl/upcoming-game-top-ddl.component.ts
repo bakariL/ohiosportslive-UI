@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'osl-upcoming-game-top-ddl',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpcomingGameTopDdlComponent implements OnInit {
   selectedValue: string = "";
+  isOpen = false;
   options = [
     { label: 'Select a sport', value: 'select-a-sport' },
     { label: 'Boys Basketball', value: 'boys-basketball' },
@@ -14,18 +15,32 @@ export class UpcomingGameTopDdlComponent implements OnInit {
   ];
   
 
-  constructor() { 
-    this.selectedValue = 'select-a-sport'; 
-
+  constructor(private elementRef: ElementRef) {
+    this.selectedValue = 'select-a-sport';
   }
 
   ngOnInit(): void {
   }
 
 
-  onSelectionChange(event: any) {
-    this.selectedValue = event.value;
-    this.options = this.options.filter(option => option.value !== 'select-a-sport');
+  get selectedLabel(): string {
+    return this.options.find(option => option.value === this.selectedValue)?.label ?? 'Select a sport';
+  }
+
+  toggleOpen(): void {
+    this.isOpen = !this.isOpen;
+  }
+
+  selectOption(option: { label: string; value: string }): void {
+    this.selectedValue = option.value;
+    this.isOpen = false;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+      this.isOpen = false;
+    }
   }
 
 }

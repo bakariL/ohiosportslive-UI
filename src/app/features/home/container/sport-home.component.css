@@ -1,0 +1,91 @@
+.sport-home {
+  background: #f6f6f6;
+  min-height: 100vh;
+}
+
+.sport-hero {
+  padding: 28px 24px 20px;
+  background: linear-gradient(135deg, #1f1f1f 0%, #3b1b2b 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sport-hero h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.sport-hero p {
+  margin: 0;
+  font-size: 13px;
+  color: #f0dfe6;
+  max-width: 520px;
+}
+
+.hero-badge {
+  width: fit-content;
+  background: rgba(255, 255, 255, 0.16);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  border-radius: 999px;
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #c4183b;
+  color: #ffffff;
+  border-color: #c4183b;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.top-banner,
+.live-scores,
+.live-games,
+.featured-players,
+.highlights,
+.footer {
+  padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .sport-hero {
+    padding: 40px 48px 28px;
+  }
+
+  .sport-hero h1 {
+    font-size: 36px;
+  }
+
+  .top-banner,
+  .live-scores,
+  .live-games,
+  .featured-players,
+  .highlights,
+  .footer {
+    padding: 0 32px;
+  }
+}

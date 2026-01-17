@@ -1,0 +1,30 @@
+<section class="highlights">
+  <h2 class="highlights__title">Highlights</h2>
+
+  <div class="highlights__grid">
+    <div
+      class="highlight-card highlight-card--large"
+      [style.--accent]="highlights[0].accent"
+    >
+      <div class="highlight-card__badge">{{ highlights[0].category }}</div>
+      <button class="highlight-card__play" type="button" aria-label="Play highlight"></button>
+      <div class="highlight-card__overlay">
+        <h3>{{ highlights[0].title }}</h3>
+      </div>
+    </div>
+
+    <div class="highlights__stack">
+      <div
+        class="highlight-card highlight-card--small"
+        *ngFor="let item of highlights.slice(1)"
+        [style.--accent]="item.accent"
+      >
+        <div class="highlight-card__badge">{{ item.category }}</div>
+        <button class="highlight-card__play" type="button" aria-label="Play highlight"></button>
+        <div class="highlight-card__overlay">
+          <h3>{{ item.title }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

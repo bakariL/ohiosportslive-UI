@@ -1,29 +1,40 @@
-<!-- <app-navbar></app-navbar> -->
+<section class="auth-screen">
+  <div class="auth-card">
+    <h1>Sign In or Sign Up</h1>
+    <div class="auth-social">
+      <button type="button" class="social-btn">
+        <i class="fab fa-google"></i>
+        Sign in with Google
+      </button>
+      <button type="button" class="social-btn">
+        <i class="fab fa-twitter"></i>
+        Sign in with Twitter
+      </button>
+    </div>
 
-<form [formGroup]="form" (submit)="login()" class="form-signin">
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <div class="divider"><span>Use my account</span></div>
 
-  <input
-    formControlName="userName"
-    type="text"
-    class="form-control"
-    placeholder="UserName"
-    required
-    autofocus
-  />
+    <form [formGroup]="form" (submit)="login()" class="auth-form">
+      <input
+        formControlName="Email_Address"
+        type="email"
+        placeholder="Email Address"
+        required
+      />
+      <input
+        formControlName="Password"
+        type="password"
+        placeholder="Password"
+        required
+      />
+      <button class="primary-btn" type="submit">Login</button>
+    </form>
 
-  <input
-    formControlName="password"
-    type="password"
-    class="form-control"
-    placeholder="Password"
-    required
-  />
-  <div class="checkbox mb-3">
-    <label> <input type="checkbox" value="remember-me" /> Remember me </label>
+    <button class="secondary-btn" type="button" [routerLink]="['/auth/signup']">Sign Up</button>
+
+    <p class="auth-footer">
+      Don't have an account?
+      <a [routerLink]="['/auth/signup']">Sign Up</a>
+    </p>
   </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">
-    Sign in
-  </button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
-</form>
+</section>

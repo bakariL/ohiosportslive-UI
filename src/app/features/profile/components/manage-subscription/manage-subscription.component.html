@@ -1,0 +1,23 @@
+<section class="subscription-page">
+  <div class="header">
+    <h1>Manage subscription</h1>
+    <p>Choose the plan that fits you best.</p>
+  </div>
+
+  <div class="plan-grid">
+    <div
+      class="plan-card"
+      *ngFor="let plan of plans"
+      [class.active]="activePlanId === plan.id"
+    >
+      <div>
+        <h2>{{ plan.name }}</h2>
+        <div class="price">{{ plan.price }}</div>
+        <p>{{ plan.description }}</p>
+      </div>
+      <button class="btn" (click)="selectPlan(plan.id)">
+        {{ activePlanId === plan.id ? 'Current plan' : 'Select plan' }}
+      </button>
+    </div>
+  </div>
+</section>

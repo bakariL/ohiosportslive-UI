@@ -1,0 +1,48 @@
+<section class="search-results">
+  <div class="search-header">
+    <h1>Search results</h1>
+    <p *ngIf="query">Results for "{{ query }}"</p>
+    <p *ngIf="!query">Type a search above to find players, teams, or events.</p>
+  </div>
+
+  <div class="results-grid" *ngIf="query">
+    <div class="result-card" *ngIf="players.length">
+      <h2>Players</h2>
+      <a class="result-row" *ngFor="let item of players" [routerLink]="['/player', item.id]">
+        <div>
+          <strong>{{ item.title }}</strong>
+          <div class="muted">{{ item.subtitle }}</div>
+        </div>
+        <span class="pill">Player</span>
+      </a>
+    </div>
+
+    <div class="result-card" *ngIf="teams.length">
+      <h2>Teams</h2>
+      <a class="result-row" *ngFor="let item of teams" [routerLink]="['/team', item.id]">
+        <div>
+          <strong>{{ item.title }}</strong>
+          <div class="muted">{{ item.subtitle }}</div>
+        </div>
+        <span class="pill">Team</span>
+      </a>
+    </div>
+
+    <div class="result-card" *ngIf="events.length">
+      <h2>Events</h2>
+      <a class="result-row" *ngFor="let item of events" [routerLink]="['/watch', item.id]">
+        <div>
+          <strong>{{ item.title }}</strong>
+          <div class="muted">{{ item.subtitle }}</div>
+        </div>
+        <span class="pill">Event</span>
+      </a>
+    </div>
+
+    <div class="empty" *ngIf="!players.length && !teams.length && !events.length">
+      No matches found. Try another search.
+    </div>
+  </div>
+</section>
+
+<osl-footer-flux></osl-footer-flux>

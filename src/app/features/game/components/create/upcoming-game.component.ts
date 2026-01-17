@@ -6,11 +6,7 @@ import { Observable, of, pipe } from 'rxjs';
 import { FileUploadService } from 'src/app/shared/file-upload/file-upload.service';
 import { Game, NewGame } from '../../models/game-models';
 import { GameService } from '../../services/game.service';
-import { GameListState } from '../upcoming-games-list/state/game-list.store';
-import { CreateNewGameState } from './state/create-new-game-state.model';
-import { CreateNewGameStateQuery } from './state/create-new-game-state.query';
 import { CreateNewGameStateService } from './state/create-new-game-state.service';
-import { CreateNewGameStateStore } from './state/create-new-game-state.store';
 import { Store } from '@ngrx/store';
 import { addGame } from '../../store/game.actions';
 
@@ -33,8 +29,6 @@ export class UpcomingGameComponent implements OnInit {
     private formBuilder: UntypedFormBuilder,
     private _router: Router,
     private _fileService: FileUploadService,
-    private _createGameQuery: CreateNewGameStateQuery,
-     private _createGameStore: CreateNewGameStateStore,
      private oslStore: Store
   ) {}
   createUpcomingGameForm = new FormGroup({
@@ -60,7 +54,7 @@ export class UpcomingGameComponent implements OnInit {
   //   this._router.navigate(['/games/view']);
   // }
 
-  createNewGame(newGame: NewGame){
+  createNewGame(){
     // this.newGame = this.createUpcomingGameForm.value
     // this._createGameService.add(this.newGame);
     // this.oslStore.dispatch(addGame())

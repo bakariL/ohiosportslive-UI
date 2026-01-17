@@ -1,18 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { HomeLivestreamingGamesComponent } from './container/homepage-livestream-games/homepage-livestream-games.component';
 import { LivestreamingGameCardComponent } from './components/livestreaming-game-card/livestreaming-game-card.component';
 import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
 import { LivestreamingPreviousGameCardComponent } from './components/livestreaming-previous-game-card/livestreaming-previous-game-card.component';
-
-// const routes: Routes = [
-//     { path: '' ,component:  HomeComponent},
-// ];
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { liveStreamingReducer } from './store/live-streaming.reducer';
+import { LiveStreamingEffects } from './store/live-streaming.effects';
 
 @NgModule({
-    declarations:[
+    declarations: [
         HomeLivestreamingGamesComponent,
         LivestreamingGameCardComponent,
         LivestreamingPreviousGameCardComponent,
@@ -20,16 +19,16 @@ import { LivestreamingPreviousGameCardComponent } from './components/livestreami
     imports: [
         CommonModule,
         MatCardModule,
-     //   RouterModule.forChild(routes),
-
+        RouterModule,
+        StoreModule.forFeature('liveStreaming', liveStreamingReducer),
+        EffectsModule.forFeature([LiveStreamingEffects]),
     ],
-    exports:[
+    exports: [
         HomeLivestreamingGamesComponent,
         LivestreamingGameCardComponent,
-        LivestreamingPreviousGameCardComponent
-    
+        LivestreamingPreviousGameCardComponent,
     ],
-    providers:[],
-    bootstrap:[],
+    providers: [],
+    bootstrap: [],
 })
-export class  LiveStreamingModule    {}
+export class LiveStreamingModule {}

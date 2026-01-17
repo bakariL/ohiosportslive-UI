@@ -1,93 +1,191 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Accept a payment</title>
-    <meta name="description" content="A demo of a payment on Stripe" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="credit-card-information.component.css" />
-  </head>
-  <body>
-    <div class="contatiner">
-      <div id="panel">
-        <form [formGroup]="form" (submit)="payNow()" id="payment-form">
-          <div class="row">
-            <div class="col-md-6 mb-2">
-              <div class="md-form md-outline my-2">
-                <input
-                  formControlName="cardownername"
-                  type="text"
-                  id="cc-name"
-                  class="form-control"
-                  required
-                />
-                <label for="cardownername">Name on card</label>
-              </div>
-              <div class="invalid-feedback">Name on card is required</div>
-            </div>
-            <div class="col-md-6 mb-2">
-              <div class="md-form md-outline my-2">
-                <input
-                  formControlName="cardnumber"
-                  type="text"
-                  id="cc-number"
-                  class="form-control"
-                  required
-                />
-                <label for="cardnumber">Credit card number</label>
-              </div>
-              <div class="invalid-feedback">Credit card number is required</div>
-            </div>
+<div class="payment-page">
+  <div class="payment-breadcrumbs">Home / Watch / Checkout</div>
+  <div class="payment-panel">
+    <div class="payment-header">
+      <div>
+        <h2>{{ flowMode === 'donate' ? 'Support OSL' : 'Secure payment' }}</h2>
+        <p class="payment-subtitle">
+          {{
+            flowMode === 'donate'
+              ? 'Your support keeps local sports streaming.'
+              : 'Encrypted checkout powered by Stripe'
+          }}
+        </p>
+      </div>
+      <div class="payment-amount">
+        <span>Total</span>
+        <strong>${{ amount | number: '1.2-2' }}</strong>
+      </div>
+      <button class="payment-close" type="button" (click)="closeDialog()">
+        ×
+      </button>
+    </div>
+
+    <div class="payment-steps">
+      <button
+        type="button"
+        class="step-pill"
+        [class.active]="currentStep === 1"
+        (click)="goToStep(1)"
+      >
+        1. Ticket
+      </button>
+      <button
+        type="button"
+        class="step-pill"
+        [class.active]="currentStep === 2"
+        (click)="goToStep(2)"
+      >
+        2. Payment
+      </button>
+      <button
+        type="button"
+        class="step-pill"
+        [class.active]="currentStep === 3"
+        (click)="goToStep(3)"
+      >
+        3. Receipt
+      </button>
+    </div>
+
+    <div class="step-card">
+      <div *ngIf="currentStep === 1" class="step-content" [formGroup]="form">
+        <div class="summary-card">
+          <div class="summary-title">
+            {{ flowMode === 'donate' ? 'Donation' : eventTitle }}
           </div>
-          <div class="row">
-            <div class="col-md-3 mb-2">
-              <div class="md-form md-outline my-2">
-                <input
-                  formControlName="expirationdate"
-                  type="month"
-                  id="cc-expiration"
-                  class="form-control"
-                  required
-                />
-                <label for="expirationdate">Expiration date</label>
-              </div>
-              <div class="invalid-feedback">Expiration date required</div>
-            </div>
-            <div class="col-md-3 mb-2">
-              <div class="md-form md-outline my-2">
-                <input
-                  formControlName="securitycode"
-                  type="text"
-                  id="cc-cvv"
-                  class="form-control"
-                  required
-                />
+          <div class="summary-meta">{{ eventMeta }}</div>
+          <div class="summary-price">${{ amount | number: '1.2-2' }}</div>
+        </div>
 
-                <label for="securitycode">CVV</label>
-              </div>
+        <div class="field" *ngIf="flowMode !== 'donate'">
+          <label for="promoCode">Promo code (optional)</label>
+          <input
+            id="promoCode"
+            type="text"
+            formControlName="promoCode"
+            placeholder="Enter code"
+          />
+        </div>
 
-              <div class="md-form md-outline my-2">
-                <input type="hidden" formControlName="id" />
-                <input type="hidden" formControlName="amount" />
-              </div>
-
-              <div class="invalid-feedback">Security code required</div>
-            </div>
-            <div class="col-md-3 mb-2">
-              <span>
-                Ticket Price: <b> ${{ data.amount }} </b></span
-              >
-            </div>
+        <div class="payment-actions">
+          <div class="payment-row">
+            <button class="btn btn-secondary" type="button" (click)="closeDialog()">
+              Cancel
+            </button>
+            <button
+              class="btn btn-primary btn-lg"
+              type="button"
+              (click)="continueToPayment()"
+            >
+              Continue to payment
+            </button>
           </div>
-          <hr class="mb-4" />
-          <button class="btn btn-primary btn-lg btn-block" type="submit">
-            Continue to checkout
-          </button>
-        </form>
+        </div>
+      </div>
+
+      <form
+        *ngIf="currentStep === 2"
+        [formGroup]="form"
+        (submit)="payNow()"
+        id="payment-form"
+        class="payment-form"
+      >
+        <div class="field-grid">
+          <div class="field">
+            <label for="cc-name">Name on card</label>
+            <input
+              formControlName="cardownername"
+              type="text"
+              id="cc-name"
+              class="form-control"
+              placeholder="Jane Doe"
+              required
+            />
+            <div class="invalid-feedback">Name on card is required</div>
+          </div>
+          <div class="field">
+            <label for="cc-number">Card number</label>
+            <input
+              formControlName="cardnumber"
+              type="text"
+              id="cc-number"
+              class="form-control"
+              placeholder="4242 4242 4242 4242"
+              required
+            />
+            <div class="invalid-feedback">Credit card number is required</div>
+          </div>
+          <div class="field">
+            <label for="cc-expiration">Expiration date</label>
+            <input
+              formControlName="expirationdate"
+              type="month"
+              id="cc-expiration"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">Expiration date required</div>
+          </div>
+          <div class="field">
+            <label for="cc-cvv">CVV</label>
+            <input
+              formControlName="securitycode"
+              type="text"
+              id="cc-cvv"
+              class="form-control"
+              placeholder="123"
+              required
+            />
+            <div class="invalid-feedback">Security code required</div>
+          </div>
+        </div>
+
+        <div class="payment-hidden">
+          <input type="hidden" formControlName="id" />
+          <input type="hidden" formControlName="amount" />
+        </div>
+
+        <div class="payment-actions">
+          <div class="payment-row">
+            <button
+              class="btn btn-outline"
+              type="button"
+              (click)="goToStep(1)"
+            >
+              Back
+            </button>
+            <button class="btn btn-primary btn-lg" type="submit">
+              Pay now
+            </button>
+          </div>
+          <div class="payment-legal">By continuing, you agree to the Terms &amp; Privacy.</div>
+        </div>
+      </form>
+
+      <div *ngIf="currentStep === 3" class="step-content receipt">
+        <div class="receipt-badge">
+          {{ flowMode === 'donate' ? 'Donation Receipt' : 'Ticket Receipt' }}
+        </div>
+        <div class="receipt-number">{{ ticketNumber }}</div>
+        <div class="receipt-title">
+          {{ flowMode === 'donate' ? 'Donation' : eventTitle }}
+        </div>
+        <div class="receipt-meta">{{ eventMeta }}</div>
+        <div class="receipt-total">
+          Paid: ${{ amount | number: '1.2-2' }}
+        </div>
+        <div class="receipt-message">
+          {{
+            flowMode === 'donate'
+              ? 'Thanks for your support!'
+              : 'Thanks for Watching. Enjoy the Game!'
+          }}
+        </div>
+        <button class="btn btn-outline" type="button" (click)="closeDialog()">
+          Close
+        </button>
       </div>
     </div>
-    <script src="https://js.stripe.com/v3/"></script>
-    <script src="./checkout.js" defer></script>
-    <script src="./card.js" defer></script>
-  </body>
-</html>
+  </div>
+</div>

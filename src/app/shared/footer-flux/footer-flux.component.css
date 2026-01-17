@@ -1,42 +1,106 @@
 
-/* .footer-flux{
-
-    
-
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: flex-start;
-padding: 51px 252px;
-
-position: absolute;
-width: 1440px;
-height: 238px;
-left: 20px;
-top: 20px;
-
-
-background: #242424;
-
-flex-shrink: 0;
-
-} */
-
-footer {
-    display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: flex-start;
-padding: 51px 252px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 1440px;
-    max-width: 1440px;
-    min-width: 720px;
-    height: 100px;
+.footer-flux {
     background: #242424;
-    padding: 20px;
-    text-align: center;
-  }
+    color: #d6d6d6;
+    padding: 32px 0;
+    width: 100%;
+}
+
+.footer-inner {
+    width: 95%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.footer-left {
+    max-width: 520px;
+}
+
+.footer-left h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.footer-left p {
+    margin: 0 0 8px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.footer-muted {
+    color: #a8a8a8;
+    font-size: 11px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 11px;
+}
+
+.footer-links a {
+    color: #d6d6d6;
+    text-decoration: none;
+}
+
+.footer-links .divider {
+    color: #8a8a8a;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.footer-follow {
+    font-size: 12px;
+    color: #d6d6d6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.social-icons a {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #242424;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+@media (max-width: 900px) {
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-flux {
+        padding: 24px 0;
+    }
+
+    .footer-inner {
+        width: 90%;
+    }
+}
   

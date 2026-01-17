@@ -10,7 +10,10 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { CreditCardInformationComponent } from './components/credit-card-info/credit-card-information.component';
 import { PurchaseProcessComponent } from './purchase-process/purchase-process.component';
 
-const routes: Routes = [{ path: 'pay', component: PaymentListComponent }];
+const routes: Routes = [
+  { path: 'pay', component: PaymentListComponent },
+  { path: 'checkout', component: CreditCardInformationComponent },
+];
 
 @NgModule({
   declarations: [

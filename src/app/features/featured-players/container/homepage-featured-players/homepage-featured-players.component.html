@@ -1,1 +1,50 @@
-<p>homepage-featured-players works!</p>
+<section class="top-performers">
+	<div class="top-performers__header">
+		<h2 class="top-performers__title">Top Performers</h2>
+		<div class="top-performers__tabs">
+			<button
+				class="tab"
+				[class.active]="activeCategory === 'basketball'"
+				(click)="setCategory('basketball')"
+			>
+				Basketball
+			</button>
+			<button
+				class="tab"
+				[class.active]="activeCategory === 'football'"
+				(click)="setCategory('football')"
+			>
+				Football
+			</button>
+			<button
+				class="tab"
+				[class.active]="activeCategory === 'volleyball'"
+				(click)="setCategory('volleyball')"
+			>
+				Volleyball
+			</button>
+		</div>
+	</div>
+
+	<div class="top-performers__body">
+		<button class="nav-arrow" type="button" aria-label="Previous" (click)="scrollCards(-1)">
+			‹
+		</button>
+
+		<div class="top-performers__cards" #cardsScroller>
+			<div class="performer-card" *ngFor="let player of visiblePlayers">
+				<div class="performer-card__avatar">
+					<span class="performer-card__initials">{{ player.initials }}</span>
+				</div>
+				<div class="performer-card__name">{{ player.name }}</div>
+				<div class="performer-card__meta">{{ player.height }} • {{ player.weight }}</div>
+				<div class="performer-card__meta">{{ player.location }}</div>
+				<div class="performer-card__meta">{{ player.school }}</div>
+			</div>
+		</div>
+
+		<button class="nav-arrow" type="button" aria-label="Next" (click)="scrollCards(1)">
+			›
+		</button>
+	</div>
+</section>

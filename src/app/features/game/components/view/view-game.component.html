@@ -1,1 +1,44 @@
-<h3>view game details</h3>
+<section class="game-preview">
+	<div class="hero">
+		<div class="hero-info">
+			<span class="badge">Upcoming game</span>
+			<h1>{{ title }}</h1>
+			<div class="meta">{{ meta }}</div>
+			<div class="cta">
+				<button class="btn primary" [routerLink]="['/watch', gameId]">Watch when live</button>
+				<button class="btn ghost">Buy tickets</button>
+			</div>
+		</div>
+		<div class="hero-card">
+			<div class="team">
+				<div class="logo"></div>
+				<strong>PHS</strong>
+			</div>
+			<div class="vs">VS</div>
+			<div class="team">
+				<div class="logo"></div>
+				<strong>BW</strong>
+			</div>
+			<div class="time">Jan 20, 2026 · 7:30 PM</div>
+			<div class="location">Henryetta HS Gym</div>
+		</div>
+	</div>
+
+	<div class="details">
+		<div class="card">
+			<h2>Game preview</h2>
+			<p>
+				Catch the matchup between Henryetta High School and Mounds High School.
+				Tip-off is set for 7:30 PM with live coverage and stats updates.
+			</p>
+		</div>
+		<div class="card">
+			<h2>How to watch</h2>
+			<ul>
+				<li>Live stream begins 10 minutes before tip-off.</li>
+				<li>Buy tickets or subscribe to OSL Plus for replays.</li>
+				<li>Follow the teams for score alerts.</li>
+			</ul>
+		</div>
+	</div>
+</section>

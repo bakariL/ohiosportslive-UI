@@ -1,17 +1,22 @@
 <mat-card class="custom-card">
-    <mat-card-title class="card-title">Upcoming Games</mat-card-title>
+  <mat-card-title class="card-title">Upcoming Games</mat-card-title>
 
   <div class="card-content">
-    <mat-form-field>
-      <mat-select  
-          class="upcoming-games-select" 
-          [(value)]="selectedValue" 
-          (selectionChange)="onSelectionChange($event)"
+    <div class="select-wrap" [class.open]="isOpen">
+      <button class="select-trigger" type="button" (click)="toggleOpen()">
+        <span class="select-label">{{ selectedLabel }}</span>
+        <span class="select-chevron"></span>
+      </button>
+
+      <ul class="select-panel" *ngIf="isOpen">
+        <li
+          class="select-option"
+          *ngFor="let option of options"
+          (click)="selectOption(option)"
         >
-        <mat-option  *ngFor="let option of options"
-         class="black-text"   
-        [value]="option.value">{{ option.label }}</mat-option>
-      </mat-select>
-    </mat-form-field>
+          {{ option.label }}
+        </li>
+      </ul>
+    </div>
   </div>
 </mat-card>

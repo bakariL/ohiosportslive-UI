@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { UntilDestroy } from '@ngneat/until-destroy';
 import { of } from 'rxjs';;
 import { GameService } from '../../../features/game/services/game.service';
-import { UpcomingGamesQuery } from '../../../features/game/components/create/state/upcoming-game-query';
 import { UpcomingGamesResponse } from '../../../features/game/models/game-models';
 
 
@@ -24,13 +23,56 @@ export class GameFeedTopComponent implements OnInit, OnDestroy {
 
   constructor(  private _gameService: GameService, 
     private _router: Router,    
-    private _upcomingGameQuery: UpcomingGamesQuery,
 
  ) {}
   ngOnInit() {
-
-
-    this.gameList$ = this._upcomingGameQuery.getUpcomingGames();
+    this.gameList$ = of([
+      {
+        gameId: 1,
+        homeTeam: 'PHS',
+        awayTeam: 'BW',
+        location: 'Stadium 1',
+        imgPath: '',
+        description: 'Mon 7:30 PM',
+        games: [],
+      },
+      {
+        gameId: 2,
+        homeTeam: 'PHS',
+        awayTeam: 'BW',
+        location: 'Stadium 2',
+        imgPath: '',
+        description: 'Mon 7:30 PM',
+        games: [],
+      },
+      {
+        gameId: 3,
+        homeTeam: 'PHS',
+        awayTeam: 'BW',
+        location: 'Stadium 3',
+        imgPath: '',
+        description: 'Mon 7:30 PM',
+        games: [],
+      },
+      {
+        gameId: 4,
+        homeTeam: 'PHS',
+        awayTeam: 'BW',
+        location: 'Stadium 4',
+        imgPath: '',
+        description: 'Mon 7:30 PM',
+        games: [],
+      },
+      {
+        gameId: 5,
+        homeTeam: 'PHS',
+        awayTeam: 'BW',
+        location: 'Stadium 5',
+        imgPath: '',
+        description: 'Mon 7:30 PM',
+        games: [],
+      },
+    ]);
 
 
   }

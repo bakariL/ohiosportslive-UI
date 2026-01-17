@@ -1,0 +1,56 @@
+.cdk-overlay-container {
+	z-index: 10000;
+}
+
+.cdk-overlay-pane.cc-dialog-panel {
+	animation: cc-slide-in 220ms ease-out;
+}
+
+.cc-dialog-panel .mat-dialog-container {
+	width: 520px;
+	max-width: 90vw;
+	max-height: calc(100vh - 48px);
+	overflow: auto;
+	border-radius: 16px;
+	padding: 0;
+	background: #ffffff;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.cc-dialog-backdrop {
+	background: rgba(12, 12, 12, 0.55);
+}
+
+.cc-dialog-panel .payment-page {
+	min-height: auto;
+	padding: 24px;
+	background: transparent;
+}
+
+.cc-dialog-panel .payment-panel {
+	max-width: 100%;
+	box-shadow: none;
+}
+
+.share-dialog-panel .mat-dialog-container {
+	padding: 0;
+	border-radius: 16px;
+	background: #ffffff;
+	box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
+}
+
+.cc-dialog-backdrop.share-dialog-backdrop {
+	background: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes cc-slide-in {
+	from {
+		transform: translateX(80px);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+@import 'plyr/dist/plyr.css';

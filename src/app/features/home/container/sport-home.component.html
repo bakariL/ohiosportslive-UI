@@ -1,0 +1,38 @@
+<section class="sport-home">
+  <section class="sport-hero">
+    <div class="hero-badge">{{ sportLabel }} Home</div>
+    <h1>{{ sportLabel }}</h1>
+    <p>
+      Follow live action, highlights, and top performers from across Ohio.
+    </p>
+    <div class="hero-actions">
+      <button class="btn primary">Follow {{ sportLabel }}</button>
+      <button class="btn ghost">Explore schedules</button>
+    </div>
+  </section>
+
+  <section class="top-banner">
+    <osl-upcoming-game-top-ddl></osl-upcoming-game-top-ddl>
+    <osl-game-feed-top></osl-game-feed-top>
+  </section>
+
+  <section class="live-scores">
+    <osl-live-scores></osl-live-scores>
+  </section>
+
+  <section class="live-games">
+    <osl-home-livestreaming-games></osl-home-livestreaming-games>
+  </section>
+
+  <section class="featured-players">
+    <osl-homepage-featured-players></osl-homepage-featured-players>
+  </section>
+
+  <section class="highlights">
+    <osl-homepage-highlights></osl-homepage-highlights>
+  </section>
+
+  <section class="footer">
+    <osl-footer-flux></osl-footer-flux>
+  </section>
+</section>

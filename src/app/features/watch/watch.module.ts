@@ -1,31 +1,28 @@
 import { CommonModule } from '@angular/common';
-import {
-  CUSTOM_ELEMENTS_SCHEMA,
-  NgModule,
-  NO_ERRORS_SCHEMA,
-} from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
-import { WatchComponent } from './components/watch-event/watch.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CreditCardInformationComponent } from '../payment/components/credit-card-info/credit-card-information.component';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
-import { WatchService } from './services/watch.service';
-import { AuthGuard } from 'src/app/shared/auth/services/auth.guard';
+import { RouterModule, Routes } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
+import { CreditCardInformationComponent } from '../payment/components/credit-card-info/credit-card-information.component';
+import { PlayerModule } from '../player/player.module';
+import { TeamSharedModule } from '../team/team-shared.module';
 import { AuthModule } from 'src/app/shared/auth/auth.module';
-import { VgCoreModule } from '@videogular/ngx-videogular/core';
-import { VgControlsModule } from '@videogular/ngx-videogular/controls';
-import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
-import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
 import { AuthService } from 'src/app/shared/auth/services/auth.service';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { WatchComponent } from './components/watch-event/watch.component';
+import { WatchService } from './services/watch.service';
+import { watchReducer } from './store/watch.reducer';
 
 const routes: Routes = [
-  { path: 'watch/id?', component: WatchComponent, canActivate: [AuthGuard] },
-  { path: 'watch/cc', component: CreditCardInformationComponent },
+  { path: '', component: WatchComponent, pathMatch: 'full' },
+  { path: 'cc', component: CreditCardInformationComponent },
+  { path: ':gameId', component: WatchComponent },
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [WatchComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -33,10 +30,10 @@ const routes: Routes = [
     HttpClientModule,
     MatDialogModule,
     AuthModule,
-    VgCoreModule,
-    VgControlsModule,
-    VgOverlayPlayModule,
-    VgBufferingModule,
+    SharedModule,
+    PlayerModule,
+    TeamSharedModule,
+    StoreModule.forFeature('watch', watchReducer),
   ],
   schemas: [],
   providers: [WatchService, AuthService],
